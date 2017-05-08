@@ -1,0 +1,13 @@
+# swagger
+# /common/responses.yaml
+
+data_error:
+  description: 缺少必要的数据或数据格式有误或数据错误
+  schema:
+    $ref: '#/definitions/error'
+opt_failed:
+  description: 操作失败
+  schema:
+    $ref: '#/definitions/error'
+opt_success:
+  description: 操作成功

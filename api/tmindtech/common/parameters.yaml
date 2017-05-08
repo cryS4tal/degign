@@ -1,0 +1,69 @@
+opt_dept_id:
+  name: X-Opt-Dept-Id
+  in: header
+  required: true
+  description: 操作部门Id。默认为系统部门
+  type: integer
+  format: int64
+id:
+  name: id
+  in: path
+  description: 资源Id
+  required: true
+  type: integer
+  format: int64
+owner_id_f:
+  name: owner_id
+  in: formData
+  description: 所有者id
+  type: integer
+  format: int64
+owner_id_q:
+  name: owner_id
+  in: query
+  description: 所有者Id
+  type: integer
+  format: int64
+name_f:
+  name: name
+  description: 名称
+  in: formData
+  type: string
+title_f:
+  name: title
+  description: 标题
+  in: formData
+  type: string
+extras_f:
+  name: extras
+  in: formData
+  description: 扩展json数据
+  type: string
+desc_f:
+  name: description
+  description: 描述
+  in: formData
+  type: string
+name_like_q:
+  name: name_like
+  in: query
+  type: string
+  description: 按名称搜索
+offset_q:
+  name: offset
+  description: 分页偏移
+  in: query
+  type: integer
+  default: 0
+limit_q:
+  name: limit
+  description: 分页请求数量
+  in: query
+  type: integer
+  default: 10
+search_q:
+  name: search
+  in: query
+  type: string
+  description: 关键字搜索
+

@@ -1,0 +1,83 @@
+/examples:
+  post:
+    tags:
+      - example
+    summary: 新增示例
+    description: |
+      使用form取代json body
+
+      等价于body
+      ```
+      {
+        "name": "string",
+        "extras": "string"
+      }
+      ```
+    parameters:
+      - $ref: '#/parameters/name_f'
+      - $ref: '#/parameters/extras_f'
+    responses:
+      200:
+        $ref: '#/responses/opt_success'
+  get:
+    tags:
+      - example
+    summary: 获取示例列表
+    description: |
+      描述支持Markdown语法
+
+      | 示例 | 说明 |
+      | --- | --- |
+      | TBD | TBD |
+
+    parameters:
+      - $ref: '#/parameters/name_like_q'
+      - $ref: '#/parameters/offset_q'
+      - $ref: '#/parameters/limit_q'
+    responses:
+      200:
+        $ref: '#/responses/examples'
+/examples/{id}:
+  parameters:
+    - $ref: '#/parameters/id'
+  get:
+    tags:
+      - example
+    summary: 获取示例详情
+    responses:
+      200:
+        $ref: '#/responses/example'
+  put:
+    tags:
+      - example
+    summary: 更新示例
+    description: |
+      更新示例
+    parameters:
+      - $ref: '#/parameters/name_f'
+      - $ref: '#/parameters/extras_f'
+    responses:
+      200:
+        $ref: '#/responses/opt_success'
+  patch:
+    tags:
+      - example
+    summary: 部分更新示例
+    description: |
+      部分更新示例 忽略空字段
+    parameters:
+      - $ref: '#/parameters/name_f'
+      - $ref: '#/parameters/extras_f'
+    responses:
+      200:
+        $ref: '#/responses/opt_success'
+  delete:
+    tags:
+      - example
+    summary: 删除示例
+    description: |
+      删除示例
+    responses:
+      200:
+        $ref: '#/responses/opt_success'
+

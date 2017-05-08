@@ -1,0 +1,21 @@
+example_query_param_q:
+  in: query
+  name: example_query_param
+  description: 示例Query参数
+  type: string
+example_form_param_f:
+  in: formData
+  name: example_form_param
+  description: 示例Form参数
+  type: string
+example_body_param_b:
+  in: body
+  name: example_body_param
+  description: 示例Body参数
+  type: string
+example_path_param_p:
+  in: path
+  name: example_path_param
+  description: 示例Path参数
+  type: string
+
