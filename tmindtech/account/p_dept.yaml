@@ -7,7 +7,7 @@
     parameters:
       - $ref: '#/parameters/limit_q'
       - $ref: '#/parameters/offset_q'
-      - $ref: '#/parameters/name_like'
+      - $ref: '#/parameters/name_like_q'
     responses:
       200:
         $ref: '#/responses/depts'

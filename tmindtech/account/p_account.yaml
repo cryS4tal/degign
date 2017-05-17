@@ -14,7 +14,7 @@
       - $ref: '#/parameters/dept_id_q'
       - $ref: '#/parameters/permission_id_q'
       - $ref: '#/parameters/role_id_q'
-      - $ref: '#/parameters/name_like'
+      - $ref: '#/parameters/name_like_q'
       - $ref: '#/parameters/offset_q'
       - $ref: '#/parameters/limit_q'
     responses:
