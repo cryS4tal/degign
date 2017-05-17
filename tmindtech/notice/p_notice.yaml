@@ -28,8 +28,8 @@
       - $ref: '#/parameters/notice_state_q'
       - $ref: '#/parameters/owner_id_q'
       - $ref: '#/parameters/notice_type_q'
-      - $ref: '#/parameters/offset'
-      - $ref: '#/parameters/limit'
+      - $ref: '#/parameters/offset_q'
+      - $ref: '#/parameters/limit_q'
     responses:
       200:
         $ref: '#/responses/notices'

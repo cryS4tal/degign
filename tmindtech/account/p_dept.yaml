@@ -5,8 +5,8 @@
     summary: 获取部门列表
     description: 系统.部门查看
     parameters:
-      - $ref: '#/parameters/limit'
-      - $ref: '#/parameters/offset'
+      - $ref: '#/parameters/limit_q'
+      - $ref: '#/parameters/offset_q'
       - $ref: '#/parameters/name_like'
     responses:
       200:

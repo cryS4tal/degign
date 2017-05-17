@@ -1,0 +1,5 @@
+folder:
+  description: 文件夹详情
+  schema:
+    $ref: '#/definitions/folder'
+

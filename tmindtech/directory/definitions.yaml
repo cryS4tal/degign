@@ -8,16 +8,23 @@ node:
       $ref: '#/definitions/id'
     type:
       type: integer
+      description: 节点类型
     parent_id:
-      $ref: '#/definitions/id'
+      description: 父节点
+      allOf:
+        - $ref: '#/definitions/id'
     name:
       type: string
+      description: 节点名称
     extras:
       $ref: '#/definitions/json_str'
     path:
       type: string
+      description: 路径
     out_id:
-      $ref: '#/definitions/id'
+      description: 外部引用Id
+      allOf:
+        - $ref: '#/definitions/id'
 file:
   $ref: '#/definitions/node'
 folder:
@@ -28,9 +35,13 @@ folder:
     - type: object
       properties:
         subfolders:
-          $ref: '#/definitions/null_array'
+          description: 子文件夹列表
+          allOf:
+            - $ref: '#/definitions/null_array'
         subfiles:
-          $ref: '#/definitions/null_array'
+          description: 子文件列表
+          allOf:
+            - $ref: '#/definitions/null_array'
 dir_base:
   type: object
   description: 目录
@@ -45,21 +56,3 @@ dir_base:
       description: 递归目录数组
       allOf:
         - $ref: '#/definitions/null_array'
-
-special_dir_extras:
-  type: object
-  description: 应用特化额外信息
-  properties:
-    code:
-      type: string
-      description: 编号
-    description:
-      type: string
-      description: 描述
-
-special_dir_base:
-  type: object
-  description: 应用特化目录
-  allOf:
-    - $ref: '#/definitions/dir_base'
-    - $ref: '#/definitions/special_dir_extras'

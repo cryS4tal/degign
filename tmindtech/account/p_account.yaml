@@ -15,8 +15,8 @@
       - $ref: '#/parameters/permission_id_q'
       - $ref: '#/parameters/role_id_q'
       - $ref: '#/parameters/name_like'
-      - $ref: '#/parameters/offset'
-      - $ref: '#/parameters/limit'
+      - $ref: '#/parameters/offset_q'
+      - $ref: '#/parameters/limit_q'
     responses:
       200:
         $ref: '#/responses/accounts'
