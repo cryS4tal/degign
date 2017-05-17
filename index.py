@@ -268,9 +268,12 @@ class Main:
 
     def run(self):
         app = create_app(self.workspace, self.namespace_list, base_path_list=self.base_path_list, debug=_args.debug)
-        app.listen('9876' if not _args.port else _args.port, "" if _args.debug else '127.0.0.1')
+        port = '9876' if not _args.port else _args.port
+        app.listen(port, "" if _args.debug else '127.0.0.1')
         ioloop = IOLoop.current()
         PeriodicCallback(lambda: None, 500, ioloop).start()
+        for name in self.namespace_list:
+            print("http://swagger.tmindtech.com/?url=http://localhost:%s/l/%s" % (port, name))
         ioloop.start()
 
 
