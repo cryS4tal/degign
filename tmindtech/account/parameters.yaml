@@ -1,0 +1,140 @@
+code_f:
+  name: code
+  description: code
+  in: formData
+  type: string
+code_q:
+  name: code
+  description: code
+  in: query
+  type: string
+verify_code_f:
+  name: code
+  description: 验证码
+  in: formData
+  type: string
+permission_type:
+  name: type
+  in: query
+  description: 权限类型 0-组织 1-系统
+  type: integer
+  enum:
+    - 0
+    - 1
+account_id:
+  name: account_id
+  in: path
+  description: 用户Id
+  required: true
+  type: integer
+  format: int64
+account_id_f:
+  name: account_id
+  in: formData
+  description: 用户Id
+  required: true
+  type: integer
+  format: int64
+dept_id:
+  name: dept_id
+  in: path
+  description: 部门Id
+  required: true
+  type: integer
+  format: int64
+dept_id_q:
+  name: dept_id
+  in: query
+  description: 部门Id
+  type: integer
+  format: int64
+dept_id_f:
+  name: dept_id
+  in: formData
+  description: 部门Id
+  type: integer
+  format: int64
+permission_id:
+  name: permission_id
+  in: path
+  description: 权限Id
+  required: true
+  type: integer
+  format: int64
+permission_id_q:
+  name: permission_id
+  in: query
+  description: 权限Id
+  type: integer
+  format: int64
+permission_id_f:
+  name: permission_id
+  in: formData
+  description: 权限Id
+  type: integer
+  format: int64
+permission_id_a:
+  name: permission_id_a
+  in: formData
+  description: 权限Id列表
+  type: array
+  items:
+    type: integer
+    format: int64
+role_id:
+  name: role_id
+  description: 角色Id
+  required: true
+  in: path
+  type: integer
+  format: int64
+role_id_f:
+  name: role_id
+  description: 角色Id
+  in: formData
+  type: integer
+  format: int64
+role_id_q:
+  name: role_id
+  description: 角色Id
+  in: query
+  type: integer
+  format: int64
+role_id_a:
+  name: id_a
+  in: formData
+  description: 角色Id列表
+  type: array
+  items:
+    type: integer
+    format: int64
+redirect_url_f:
+  name: redirect_url
+  description: 重定向地址
+  in: formData
+  type: string
+redirect_url_q:
+  name: redirect_url
+  description: 重定向地址
+  in: query
+  type: string
+redirect_state_q:
+  name: state
+  description: 重定向状态
+  in: query
+  type: string
+phone_f:
+  name: phone
+  description: 手机号
+  in: formData
+  type: string
+phone_q:
+  name: phone
+  description: 手机号
+  in: query
+  type: string
+is_bind_login_f:
+  name: is_bind_login
+  description: 是否绑定登录
+  in: formData
+  type: boolean

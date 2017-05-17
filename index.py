@@ -238,10 +238,10 @@ _args = _parser.parse_args()
 def solve(data, base_path):
     if base_path == 'd':
         data['host'] = 'apitest.tmindtech.com'
-        data['basePath'] = '/dev/v1'
+        data['basePath'] = '/lawcat/dev/v1'
     elif base_path == 't':
         data['host'] = 'apitest.tmindtech.com'
-        data['basePath'] = '/test/v1'
+        data['basePath'] = '/lawcat/test/v1'
     elif base_path == 'l':
         data['schemes'] = ['http']  # 本地环境不使用https
         data['host'] = '127.0.0.1:8080'  # 使用8080端口，规避80端口需要root权限
@@ -250,7 +250,14 @@ class Main:
     workspace = 'tmindtech'
 
     namespace_list = (
-        'example',
+        'account',
+        'category',
+        'comment',
+        'directory',
+        'lawyer',
+        'notice',
+        'survey',
+        'storage',
     )
 
     base_path_list = (

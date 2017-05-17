@@ -1,0 +1,4 @@
+download:
+  description: 文件
+  schema:
+    type: file

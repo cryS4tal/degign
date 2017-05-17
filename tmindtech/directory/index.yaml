@@ -1,0 +1,96 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: DtDream Directory API
+host: api.tmindtech.com
+basePath: /dtdream/v2
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+tags:
+  - name: path
+    description: 目录
+definitions:
+  !includes
+    - "common/definitions.yaml"
+    - "directory/definitions.yaml"
+parameters:
+  !includes
+    - "common/parameters.yaml"
+    - "directory/parameters.yaml"
+responses:
+  !join
+    - !include "common/responses.yaml"
+    - folder:
+        description: 文件夹详情
+        schema:
+          $ref: '#/definitions/folder'
+paths:
+  /directory/{path}:
+    parameters:
+      - $ref: '#/parameters/basic_auth'
+      - $ref: '#/parameters/path_p'
+    get:
+      tags:
+        - path
+      summary: 获取文件夹详情
+      description: |
+        仅当get_files = true，返回的结构中subfiles才会有内容，否则只能获取到文件夹。
+
+        该接口的参数以及返回结果中的offset、limit、count都是针对subfiles的。
+
+        subfolders 没有分页，一定是返回全部结果。
+
+        recursive = true 时，才会递归获取所有内容，否则subfolders中的元素folder的subfolders为空。
+      parameters:
+        - $ref: '#/parameters/get_files'
+        - $ref: '#/parameters/recursive'
+        - $ref: '#/parameters/offset'
+        - $ref: '#/parameters/limit'
+      responses:
+        "200":
+          $ref: '#/responses/folder'
+    post:
+      tags:
+        - path
+      summary: 新建文件(夹)
+      parameters:
+        - $ref: '#/parameters/name'
+        - $ref: '#/parameters/extras'
+        - $ref: '#/parameters/node_type'
+        - $ref: '#/parameters/out_id'
+      responses:
+        "200":
+          $ref: '#/responses/node'
+    put:
+      tags:
+        - path
+      summary: 更新文件(夹)
+      parameters:
+        - $ref: '#/parameters/name'
+        - $ref: '#/parameters/extras'
+        - $ref: '#/parameters/out_id'
+      responses:
+        "200":
+          $ref: '#/responses/opt_success'
+        "403":
+          $ref: '#/responses/opt_failed'
+    delete:
+      tags:
+        - path
+      summary: 删除文件(夹)
+      description: |
+
+        不提供递归功能防止误操作。文件夹下存在文件时，无法删除文件夹。
+
+        允许指定删除的节点类型 避免误删
+      parameters:
+        - $ref: '#/parameters/node_type_q'
+      responses:
+        "200":
+          $ref: '#/responses/opt_success'
+        "403":
+          $ref: '#/responses/opt_failed'

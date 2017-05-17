@@ -1,0 +1,45 @@
+/notices:
+  post:
+    tags:
+      - internal
+    summary: 新增通知
+    parameters:
+      - $ref: '#/parameters/notice_type_f'
+      - $ref: '#/parameters/out_id_f'
+      - $ref: '#/parameters/owner_id_f'
+      - $ref: '#/parameters/title_f'
+      - $ref: '#/parameters/desc_f'
+      - $ref: '#/parameters/extras_f'
+    responses:
+      200:
+        $ref: '#/responses/opt_success'
+  get:
+    tags:
+      - notice
+    summary: 获取通知列表
+    description: |
+      默认以时间倒序排列
+
+      | 通知类型 | 类型说明 |
+      | --- | --- |
+      | TBD | TBD |
+
+    parameters:
+      - $ref: '#/parameters/notice_state_q'
+      - $ref: '#/parameters/owner_id_q'
+      - $ref: '#/parameters/notice_type_q'
+      - $ref: '#/parameters/offset'
+      - $ref: '#/parameters/limit'
+    responses:
+      200:
+        $ref: '#/responses/notices'
+/notices/read:
+  put:
+    tags:
+      - notice
+    summary: 标记为已读
+    parameters:
+      - $ref: '#/parameters/id_a_f'
+    responses:
+      200:
+        $ref: '#/responses/opt_success'

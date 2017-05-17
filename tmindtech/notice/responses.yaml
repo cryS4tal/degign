@@ -1,0 +1,4 @@
+notices:
+  description: 通知列表
+  schema:
+    $ref: '#/definitions/notices'

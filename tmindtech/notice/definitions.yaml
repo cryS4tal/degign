@@ -1,0 +1,40 @@
+notice:
+  type: object
+  properties:
+    id:
+      $ref: '#/definitions/id'
+    type:
+      type: string
+      description: 通知类别
+    out_id:
+      description: 外部引用Id
+      allOf:
+        - $ref: '#/definitions/id'
+    owner_id:
+      $ref: '#/definitions/id'
+    title:
+      type: string
+      description: 标题
+    description:
+      type: string
+      description: 通知描述
+    extras:
+      description: 额外信息
+      allOf:
+        - $ref: '#/definitions/json_str'
+    state:
+      type: integer
+      description: 0-未读 1-已读
+notices:
+  type: object
+  allOf:
+    - $ref: '#/definitions/array_base'
+    - type: object
+      properties:
+        notices:
+          type: array
+          items:
+            $ref: '#/definitions/notice'
+        unread_count:
+          type: integer
+          description: 未读数量

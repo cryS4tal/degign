@@ -1,0 +1,26 @@
+/login/oauth2_wechat:
+  get:
+    tags:
+      - auth
+    summary: 微信登录跳转
+    description: |
+      公众号网页 微信登录跳转
+    parameters:
+      - $ref: '#/parameters/redirect_url_q'
+      - $ref: '#/parameters/redirect_state_q'
+    responses:
+      302:
+        description: 微信登录重定向
+  post:
+    tags:
+      - auth
+    summary: 微信登录
+    parameters:
+      - $ref: '#/parameters/code_f'
+    responses:
+      200:
+        $ref: '#/responses/account_full'
+      202:
+        description: 需要手机号登录
+        schema:
+          $ref: '#/definitions/error'

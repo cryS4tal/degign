@@ -1,0 +1,6 @@
+upload_file:
+  name: upload_file
+  in: formData
+  description: 文件
+  type: file
+

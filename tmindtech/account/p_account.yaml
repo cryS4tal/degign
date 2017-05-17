@@ -1,0 +1,34 @@
+/accounts:
+  get:
+    tags:
+      - account
+    summary: 获取用户列表
+    description: |
+      部门/系统.人员管理
+
+      指定dept_id获取部门所属的人员列表，name_like模糊匹配
+
+      当设置了permission_id时，将忽略role_id
+    parameters:
+      - $ref: '#/parameters/opt_dept_id'
+      - $ref: '#/parameters/dept_id_q'
+      - $ref: '#/parameters/permission_id_q'
+      - $ref: '#/parameters/role_id_q'
+      - $ref: '#/parameters/name_like'
+      - $ref: '#/parameters/offset'
+      - $ref: '#/parameters/limit'
+    responses:
+      200:
+        $ref: '#/responses/accounts'
+/accounts/{account_id}:
+  parameters:
+    - $ref: '#/parameters/account_id'
+  get:
+    tags:
+      - account
+    summary: 获取用户信息
+    description: 公开
+    responses:
+      200:
+        $ref: '#/responses/account'
+

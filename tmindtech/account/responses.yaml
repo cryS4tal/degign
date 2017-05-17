@@ -1,0 +1,43 @@
+# swagger
+# /account/responses
+
+account:
+  description: 用户信息
+  schema:
+    $ref: '#/definitions/account'
+account_full:
+  description: 用户信息
+  schema:
+    $ref: '#/definitions/account_full'
+accounts:
+  description: 用户列表
+  schema:
+    $ref: '#/definitions/accounts'
+dept:
+  description: 部门信息
+  schema:
+    $ref: '#/definitions/dept'
+depts:
+  description: 部门列表
+  schema:
+    $ref: '#/definitions/depts'
+dept_dir:
+  description: 部门目录
+  schema:
+    $ref: '#/definitions/dept_dir'
+role:
+  description: 角色信息
+  schema:
+    $ref: '#/definitions/role'
+roles:
+  description: 角色列表
+  schema:
+    $ref: '#/definitions/roles'
+permission:
+  description: 权限信息
+  schema:
+    $ref: '#/definitions/permission'
+permissions:
+  description: 权限列表
+  schema:
+    $ref: '#/definitions/permissions'

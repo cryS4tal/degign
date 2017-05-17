@@ -1,0 +1,35 @@
+# swagger
+# directory/parameters
+
+node_type:
+  name: type
+  in: formData
+  description: 节点类型 0-文件 1-文件夹
+  required: true
+  type: integer
+  enum:
+    - 0
+    - 1
+get_files:
+  name: get_files
+  in: formData
+  type: boolean
+  default: false
+  description: 是否获取文件列表
+recursive:
+  name: recursive
+  in: formData
+  type: boolean
+  default: false
+  description: 是否递归
+
+node_type_q:
+  name: type
+  in: query
+  description: 节点类型 0-文件 1-文件夹
+  required: false
+  type: integer
+  enum:
+    - 0
+    - 1
+

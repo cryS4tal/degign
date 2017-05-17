@@ -1,0 +1,44 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: Tmind Account API
+host: api.tmindtech.com
+basePath: /tmind/v1
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+tags:
+  - name: permission
+    description: 权限管理与验证
+  - name: role
+    description: 角色管理
+  - name: department
+    description: 部门管理
+  - name: account
+    description: 人员管理
+  - name: auth
+    description: 登录授权与登出
+definitions:
+  !includes
+    - "common/definitions.yaml"
+    - "account/definitions.yaml"
+parameters:
+  !includes
+    - "common/parameters.yaml"
+    - "account/parameters.yaml"
+responses:
+  !includes
+    - "common/responses.yaml"
+    - "account/responses.yaml"
+paths:
+  !includes
+    - "account/p_auth.yaml"
+    - "account/p_wechat_auth.yaml"
+    - "account/p_account.yaml"
+    - "account/p_permission.yaml"
+    - "account/p_dept.yaml"
+    - "account/p_phone_auth.yaml"
+

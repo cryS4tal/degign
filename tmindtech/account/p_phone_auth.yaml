@@ -1,0 +1,62 @@
+/login/phone:
+  post:
+    tags:
+      - auth
+    summary: 手机号登录
+    parameters:
+      - $ref: '#/parameters/phone_f'
+      - $ref: '#/parameters/verify_code_f'
+      - $ref: '#/parameters/is_bind_login_f'
+    responses:
+      200:
+        $ref: '#/responses/account_full'
+/login/phone/verify_code:
+  post:
+    tags:
+      - auth
+    summary: 请求获取登录用手机验证码
+    parameters:
+      - $ref: '#/parameters/phone_f'
+    responses:
+      200:
+        $ref: '#/responses/opt_success'
+  get:
+    tags:
+      - auth
+    summary: 校验手机验证码
+    description: |
+      校验手机验证码
+    parameters:
+      - $ref: '#/parameters/phone_q'
+      - $ref: '#/parameters/code_q'
+    responses:
+      200:
+        $ref: '#/responses/opt_success'
+/login/phone/bind:
+  put:
+    tags:
+      - auth
+    summary: 绑定手机号
+    description: |
+      个人
+
+      登录后可以绑定手机号或更换
+    parameters:
+      - $ref: '#/parameters/phone_f'
+      - $ref: '#/parameters/verify_code_f'
+    responses:
+      200:
+        $ref: '#/responses/opt_success'
+  delete:
+    tags:
+      - auth
+    summary: 取消手机号绑定
+    description: |
+      当手机号不是唯一的登录方式时，可以取消绑定
+
+      手机号参数作为简单校验
+    parameters:
+      - $ref: '#/parameters/phone_q'
+    responses:
+      200:
+        $ref: '#/responses/opt_success'
