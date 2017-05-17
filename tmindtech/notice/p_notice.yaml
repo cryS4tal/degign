@@ -39,7 +39,15 @@
       - notice
     summary: 标记为已读
     parameters:
-      - $ref: '#/parameters/id_a_f'
+      - $ref: '#/parameters/id_list_f'
     responses:
       200:
         $ref: '#/responses/opt_success'
+/notices/unread_count:
+  get:
+    tags:
+      - notice
+    summary: 获取未读条数
+    responses:
+      200:
+        $ref: '#/responses/notice_unread_count'

@@ -2,3 +2,7 @@ notices:
   description: 通知列表
   schema:
     $ref: '#/definitions/notices'
+notice_unread_count:
+  description: 未读条数
+  schema:
+    $ref: '#/definitions/notice_unread_count'

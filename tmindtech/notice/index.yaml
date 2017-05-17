@@ -13,6 +13,8 @@ produces:
 tags:
   - name: notice
     description: 通知
+  - name: internal
+    description: 内部接口
 definitions:
   !includes
     - "common/definitions.yaml"

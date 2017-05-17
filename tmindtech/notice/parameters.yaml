@@ -16,3 +16,9 @@ notice_type_q:
   in: query
   description: 通知类型 (由使用方指定）
   type: string
+id_list_f:
+  in: formData
+  name: id_list
+  description: id列表
+  type: integer
+
