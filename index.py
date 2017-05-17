@@ -251,7 +251,6 @@ class Main:
 
     namespace_list = (
         'account',
-        'category',
         'comment',
         'directory',
         'lawyer',

@@ -16,9 +16,6 @@ note top: 通知模块
 
 package lawcat {
 
-[category]
-note top: 分类模块
-
 [survey]
 note top: 问卷模块
 

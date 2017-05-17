@@ -20,5 +20,9 @@ admin --> (Get Survey List)
 admin --> (Get Survey Result List)
 admin --> (Get Survey Result Detail)
 
+user --> (List category tree)
+user --> (Add category)
+user --> (Delete category)
+user --> (Update category)
 @enduml
 ```

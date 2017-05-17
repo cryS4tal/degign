@@ -38,3 +38,8 @@ modify_time:
 json_str:
   type: string
   description: JSON数据
+null_array:
+  type: array
+  items:
+    type: object
+    properties: {}

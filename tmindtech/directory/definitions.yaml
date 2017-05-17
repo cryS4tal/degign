@@ -1,58 +1,44 @@
-# swagger
-# directory/definitions
-
 node:
   type: object
+  description: 节点
   properties:
     id:
       $ref: '#/definitions/id'
     type:
       type: integer
       description: 节点类型
-    parent_id:
-      description: 父节点
-      allOf:
-        - $ref: '#/definitions/id'
     name:
       type: string
-      description: 节点名称
+      description: 名称
+    description:
+      type: string
+      description: 描述
     extras:
       $ref: '#/definitions/json_str'
     path:
       type: string
       description: 路径
-    out_id:
-      description: 外部引用Id
-      allOf:
-        - $ref: '#/definitions/id'
-file:
-  $ref: '#/definitions/node'
-folder:
+
+nodes:
+  description: 节点列表
   type: object
   allOf:
-    - $ref: '#/definitions/node'
     - $ref: '#/definitions/array_base'
     - type: object
       properties:
-        subfolders:
-          description: 子文件夹列表
-          allOf:
-            - $ref: '#/definitions/null_array'
-        subfiles:
-          description: 子文件列表
-          allOf:
-            - $ref: '#/definitions/null_array'
+        data_list:
+          type: array
+          items:
+            $ref: '#/definitions/node'
 dir_base:
   type: object
   description: 目录
-  properties:
-    path:
-      type: string
-      description: 目录路径
-    name:
-      type: string
-      description: 目录名
-    subfolders:
-      description: 递归目录数组
-      allOf:
-        - $ref: '#/definitions/null_array'
+  allOf:
+    - $ref: '#/definitions/node'
+    - type: object
+      description: 节点列表
+      properties:
+        nodes:
+          $ref: '#/definitions/nodes'
+
+
