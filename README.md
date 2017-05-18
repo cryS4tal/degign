@@ -19,7 +19,17 @@
 ## 测试服务地址
 提供测试用的Swagger UI地址
 
-[example](http://swagger.tmindtech.com/?url=https://apitest.tmindtech.com/base/doc/d/example)
+[account](http://swagger.tmindtech.com/?url=https://apitest.tmindtech.com/lawcat/doc/d/account)
+[notice](http://swagger.tmindtech.com/?url=https://apitest.tmindtech.com/lawcat/doc/d/notice)
+[survey](http://swagger.tmindtech.com/?url=https://apitest.tmindtech.com/lawcat/doc/d/survey)
+[storage](http://swagger.tmindtech.com/?url=https://apitest.tmindtech.com/lawcat/doc/d/storage)
+
+### no ready
+[comment](http://swagger.tmindtech.com/?url=https://apitest.tmindtech.com/lawcat/doc/d/comment)
+[lawyer](http://swagger.tmindtech.com/?url=https://apitest.tmindtech.com/lawcat/doc/d/lawyer)
+
+### internal
+[directory](http://swagger.tmindtech.com/?url=https://apitest.tmindtech.com/lawcat/doc/d/directory)
 
 # 如何开始
 ## 开发环境
