@@ -12,8 +12,6 @@
     parameters:
       - $ref: '#/parameters/get_files_q'
       - $ref: '#/parameters/recursive_q'
-      - $ref: '#/parameters/offset_q'
-      - $ref: '#/parameters/limit_q'
     responses:
       "200":
         $ref: '#/responses/dir_base'

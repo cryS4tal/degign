@@ -19,17 +19,6 @@ node:
       type: string
       description: 路径
 
-nodes:
-  description: 节点列表
-  type: object
-  allOf:
-    - $ref: '#/definitions/array_base'
-    - type: object
-      properties:
-        data_list:
-          type: array
-          items:
-            $ref: '#/definitions/node'
 dir_base:
   type: object
   description: 目录
@@ -39,6 +28,8 @@ dir_base:
       description: 节点列表
       properties:
         nodes:
-          $ref: '#/definitions/nodes'
+          type: array
+          items:
+            $ref: '#/definitions/node'
 
 
