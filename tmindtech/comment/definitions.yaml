@@ -1,0 +1,44 @@
+comment:
+  type: object
+  description: 评论
+  properties:
+    id:
+      $ref: '#/definitions/id'
+    target_id:
+      type: integer
+      description: 目标Id
+    target_type:
+      type: integer
+      description: 目标类型
+    content:
+      type: string
+      description: 评论内容
+    user:
+      $ref: '#/definitions/simple_account'
+    create_time:
+      $ref: '#/definitions/create_time'
+    modify_time:
+      $ref: '#/definitions/modify_time'
+    is_plus:
+      type: boolean
+      description: 是否点赞 (当前用户)
+comments:
+  description: 评论列表
+  type: object
+  allOf:
+    - $ref: '#/definitions/array_base'
+    - type: object
+      properties:
+        data_list:
+          type: array
+          items:
+            $ref: '#/definitions/comment'
+plus:
+  type: object
+  description: 点赞
+  properties:
+    id:
+      $ref: '#/definitions/id'
+    is_plus:
+      type: boolean
+      description: 是否点赞
