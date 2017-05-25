@@ -57,10 +57,10 @@
     responses:
       200:
         $ref: '#/responses/opt_success'
-/comments/{id}/plus/{user_id}:
+/comments/{id}/plus/{account_id}:
   parameters:
     - $ref: '#/parameters/id'
-    - $ref: '#/parameters/user_id'
+    - $ref: '#/parameters/account_id'
   get:
     tags:
       - plus

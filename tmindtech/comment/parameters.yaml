@@ -13,9 +13,4 @@ content_f:
   name: content
   description: 内容
   type: string
-user_id:
-  in: path
-  name: user_id
-  description: 用户Id
-  type: integer
-  required: true
+

@@ -14,7 +14,7 @@ object comment {
     //点评目标
     int64 target_id
     //点评人
-    int64 user_id
+    int64 account_id
     //点评内容
     string content
     //删除标记
@@ -30,7 +30,7 @@ object comment_plus {
     //评论id
     int64 comment_id
     //点赞用户
-    int64 user_id
+    int64 account_id
     //删除标记
     boolean is_deleted
     //创建时间

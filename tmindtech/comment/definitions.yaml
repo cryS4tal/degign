@@ -13,7 +13,7 @@ comment:
     content:
       type: string
       description: 评论内容
-    user:
+    account:
       $ref: '#/definitions/simple_account'
     create_time:
       $ref: '#/definitions/create_time'

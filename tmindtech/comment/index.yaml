@@ -25,6 +25,7 @@ definitions:
 parameters:
   !includes
     - "common/parameters.yaml"
+    - "account/parameters.yaml"
     - "comment/parameters.yaml"
 responses:
   !includes
