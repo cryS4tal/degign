@@ -23,8 +23,6 @@
 [notice](http://swagger.tmindtech.com/?url=https://apitest.tmindtech.com/lawcat/doc/d/notice)
 [survey](http://swagger.tmindtech.com/?url=https://apitest.tmindtech.com/lawcat/doc/d/survey)
 [storage](http://swagger.tmindtech.com/?url=https://apitest.tmindtech.com/lawcat/doc/d/storage)
-
-### no ready
 [comment](http://swagger.tmindtech.com/?url=https://apitest.tmindtech.com/lawcat/doc/d/comment)
 [lawyer](http://swagger.tmindtech.com/?url=https://apitest.tmindtech.com/lawcat/doc/d/lawyer)
 
