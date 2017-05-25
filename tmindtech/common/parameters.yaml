@@ -66,4 +66,12 @@ search_q:
   in: query
   type: string
   description: 关键字搜索
+images_f:
+  in: formData
+  name: images
+  description: 图片URL列表
+  type: array
+  items:
+    type: string
+
 

@@ -1,0 +1,85 @@
+survey_dirs:
+  description: 问卷目录列表
+  type: object
+  allOf:
+    - $ref: '#/definitions/array_base'
+    - type: object
+      properties:
+        data_list:
+          type: array
+          items:
+            $ref: '#/definitions/simple_dir'
+lawyer_card:
+  type: object
+  description: 律师名片
+  properties:
+    id:
+      $ref: '#/definitions/id'
+    real_name:
+      description: 姓名
+      type: string
+    dirs:
+      $ref: '#/definitions/survey_dirs'
+    work_place:
+      description: 工作场所
+      type: string
+    phone:
+      description: 手机号
+      type: string
+lawyer_cards:
+  description: 律师名片列表
+  type: object
+  allOf:
+    - $ref: '#/definitions/array_base'
+    - type: object
+      properties:
+        data_list:
+          type: array
+          items:
+            $ref: '#/definitions/lawyer_card'
+lawyer_verify_review:
+  type: object
+  description: 律师认证审核
+  properties:
+    id:
+      $ref: '#/definitions/id'
+    lawyer_id:
+      description: 律师Id
+      allOf:
+        - $ref: '#/definitions/id'
+    real_name:
+      description: 姓名
+      type: string
+    work_place:
+      description: 工作场所
+      type: string
+    phone:
+      description: 手机号
+      type: string
+    images:
+      description: 图片URL列表
+      type: array
+      items:
+        type: string
+    state:
+      description: 状态 0-审核中 1-审核通过 2-审核失败
+      type: integer
+    result_msg:
+      description: 审核意见
+      type: string
+    create_time:
+      $ref: '#/definitions/create_time'
+    modify_time:
+      $ref: '#/definitions/modify_time'
+lawyer_verify_reviews:
+  description: 获取认证审核列表
+  type: object
+  allOf:
+    - $ref: '#/definitions/array_base'
+    - type: object
+      properties:
+        data_list:
+          type: array
+          items:
+            $ref: '#/definitions/lawyer_verify_review'
+

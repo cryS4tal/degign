@@ -1,0 +1,39 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: Tmind Lawyer API
+  description: |
+    律师名片的获取 通过用户点赞律师的点评获取
+
+host: api.tmindtech.com
+basePath: /tmind/v1
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+tags:
+  - name: lawyer_card
+    description: 律师名片
+  - name: lawyer
+    description: 律师
+definitions:
+  !includes
+    - "common/definitions.yaml"
+    - "directory/definitions.yaml"
+    - "account/definitions.yaml"
+    - "lawyer/definitions.yaml"
+parameters:
+  !includes
+    - "common/parameters.yaml"
+    - "account/parameters.yaml"
+    - "lawyer/parameters.yaml"
+responses:
+  !includes
+    - "common/responses.yaml"
+    - "lawyer/responses.yaml"
+paths:
+  !includes
+    - "lawyer/p_lawyer.yaml"
+
