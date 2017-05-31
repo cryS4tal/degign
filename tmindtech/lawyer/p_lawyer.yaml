@@ -34,6 +34,7 @@
     description: |
       权限: 管理员
     parameters:
+      - $ref: '#/parameters/is_approved_f'
       - $ref: '#/parameters/offset_q'
       - $ref: '#/parameters/limit_q'
     responses:
