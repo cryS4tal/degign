@@ -13,4 +13,13 @@ content_f:
   name: content
   description: 内容
   type: string
-
+target_id_q:
+  in: query
+  name: target_id
+  description: 目标Id
+  type: integer
+target_type_q:
+  in: query
+  name: target_type
+  description: 目标类型
+  type: integer

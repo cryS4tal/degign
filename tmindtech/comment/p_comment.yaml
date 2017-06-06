@@ -6,8 +6,8 @@
     description: |
       权限: 所有登录用户
     parameters:
-      - $ref: '#/parameters/target_id_f'
-      - $ref: '#/parameters/target_type_f'
+      - $ref: '#/parameters/target_id_q'
+      - $ref: '#/parameters/target_type_q'
       - $ref: '#/parameters/offset_q'
       - $ref: '#/parameters/limit_q'
     responses:
