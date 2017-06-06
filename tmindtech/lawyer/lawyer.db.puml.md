@@ -2,20 +2,7 @@
 @startuml
 left to right direction
 
-object lawyer_verify {
-    //律师Id
-    int64 id
-    //真实姓名
-    string real_name
-    //工作场所
-    string work_place
-    //手机
-    string phone
-    //图片
-    string images
-}
-
-object lawyer_survey_dir {
+object lawyer_survey {
     int64 id
     //律师Id
     int64 lawyer_id
@@ -23,10 +10,10 @@ object lawyer_survey_dir {
     string path
 }
 
-object lawyer_verify_review {
+object lawyer {
     int64 id
     //律师Id
-    int64 id
+    int64 lawyer_id
     //真实姓名
     string real_name
     //工作场所
@@ -39,8 +26,10 @@ object lawyer_verify_review {
     int state
     //审核意见
     string result_msg
-    //审核人
-    int64 reviewer_id
+    //创建时间
+    Timestamp create_time;
+    //修改时间
+    Timestamp modify_time;
 }
 
 @enduml

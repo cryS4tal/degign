@@ -14,6 +14,10 @@ survey_edition:
   description: 问卷版本
   schema:
     $ref: '#/definitions/survey_edition'
+survey_edition_detail:
+  description: 问卷版本详细
+  schema:
+    $ref: '#/definitions/survey_edition_detail'
 survey_dir:
   description: 问卷目录
   schema:

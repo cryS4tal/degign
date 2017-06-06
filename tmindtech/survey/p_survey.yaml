@@ -8,6 +8,8 @@
 
       当enabled为false或不设置时需要权限, 否则为公开
 
+      edition.extras不返回
+
     parameters:
       - $ref: '#/parameters/path_q'
       - $ref: '#/parameters/name_like_q'
@@ -119,6 +121,15 @@
     responses:
       200:
         $ref: '#/responses/opt_success'
+  get:
+    tags:
+      - survey
+    summary: 获取版本详情
+    description: |
+      系统.问卷管理
+    responses:
+      200:
+        $ref: '#/responses/survey_edition_detail'
 /surveys/{id}/current_edition:
   parameters:
     - $ref: '#/parameters/id'

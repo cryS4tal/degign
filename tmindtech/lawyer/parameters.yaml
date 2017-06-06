@@ -13,6 +13,11 @@ is_approved_f:
   name: is_approved
   description: 是否通过审核
   type: boolean
+is_approved_q:
+  in: query
+  name: is_approved
+  description: 是否通过审核
+  type: boolean
 result_msg_f:
   in: formData
   name: result_msg

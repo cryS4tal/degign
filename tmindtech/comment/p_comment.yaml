@@ -4,8 +4,10 @@
       - comment
     summary: 获取评论列表
     description: |
-      权限: 用户
+      权限: 所有登录用户
     parameters:
+      - $ref: '#/parameters/target_id_f'
+      - $ref: '#/parameters/target_type_f'
       - $ref: '#/parameters/offset_q'
       - $ref: '#/parameters/limit_q'
     responses:
@@ -16,7 +18,7 @@
       - comment
     summary: 添加评论
     description: |
-      权限: 用户
+      权限: 律师
     parameters:
       - $ref: '#/parameters/target_id_f'
       - $ref: '#/parameters/target_type_f'
@@ -33,16 +35,16 @@
       - comment
     summary: 获取评论详情
     description: |
-      权限: 用户
+      权限: 所有登录用户
     responses:
       200:
         $ref: '#/responses/comment'
-  post:
+  put:
     tags:
       - comment
     summary: 修改评论
     description: |
-      权限: 发布者
+      权限: 律师（发布者）
     parameters:
       - $ref: '#/parameters/content_f'
     responses:

@@ -4,7 +4,7 @@
       - lawyer_card
     summary: 获取律师名片列表
     description: |
-      权限: 用户
+      权限: 用户 & 管理员
 
       列出指定用户的律师名片列表
     parameters:
@@ -34,7 +34,7 @@
     description: |
       权限: 管理员
     parameters:
-      - $ref: '#/parameters/is_approved_f'
+      - $ref: '#/parameters/is_approved_q'
       - $ref: '#/parameters/offset_q'
       - $ref: '#/parameters/limit_q'
     responses:
@@ -45,7 +45,7 @@
       - lawyer
     summary: 提交认证
     description: |
-      权限: 律师
+      权限: 用户
     parameters:
       - $ref: '#/parameters/phone_f'
       - $ref: '#/parameters/code_f'
@@ -76,7 +76,7 @@
       - lawyer
     summary: 获取认证审核信息
     description: |
-      权限: 律师
+      权限: 用户&管理员
     parameters:
       - $ref: '#/parameters/account_id_q'
     responses:
@@ -90,7 +90,7 @@
       - lawyer
     summary: 获取律师分类
     description: |
-      权限: 律师
+      权限: 用户 & 管理员
     responses:
       200:
         $ref: '#/responses/survey_dirs'
@@ -99,7 +99,7 @@
       - lawyer
     summary: 设置律师分类
     description: |
-      权限: 律师
+      权限: 用户 & 管理员
     parameters:
       - $ref: '#/parameters/paths_f'
     responses:

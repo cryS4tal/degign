@@ -19,12 +19,36 @@ survey_edition:
       $ref: '#/definitions/create_time'
     modify_time:
       $ref: '#/definitions/modify_time'
+survey_edition_detail:
+  type: object
+  description: 问卷版本
+  properties:
+    id:
+      $ref: '#/definitions/id'
+    survey:
+      description: 问卷
+      allOf:
+        - $ref: '#/definitions/edition_survey'
+    extras:
+      description: 问卷数据
+      allOf:
+        - $ref: '#/definitions/json_str'
+    enabled:
+      description: 是否发布
+      type: boolean
+    create_time:
+      $ref: '#/definitions/create_time'
+    modify_time:
+      $ref: '#/definitions/modify_time'
 survey:
   type: object
   description: 问卷
   properties:
     id:
       $ref: '#/definitions/id'
+    path:
+      description: 路径
+      type: string
     name:
       description: 标题
       type: string
@@ -42,6 +66,18 @@ survey:
       $ref: '#/definitions/create_time'
     modify_time:
       $ref: '#/definitions/modify_time'
+edition_survey:
+  type: object
+  description: 问卷
+  properties:
+    id:
+      $ref: '#/definitions/id'
+    name:
+      description: 标题
+      type: string
+    description:
+      description: 描述
+      type: string
 surveys:
   description: 问卷列表
   type: object

@@ -4,20 +4,27 @@ node:
   properties:
     id:
       $ref: '#/definitions/id'
-    type:
-      type: integer
-      description: 节点类型
     name:
       type: string
       description: 名称
     description:
       type: string
       description: 描述
-    extras:
-      $ref: '#/definitions/json_str'
     path:
       type: string
       description: 路径
+
+nodes:
+  description: 节点列表
+  type: object
+  allOf:
+    - $ref: '#/definitions/array_base'
+    - type: object
+      properties:
+        data_list:
+          type: object
+          items:
+            $ref: '#/definitions/node'
 dir_base:
   type: object
   description: 目录
@@ -27,18 +34,6 @@ dir_base:
       description: 节点列表
       properties:
         nodes:
-          type: array
-          items:
-            $ref: '#/definitions/node'
-simple_dir:
-  type: object
-  description: 目录
-  properties:
-    path:
-      type: string
-      description: 路径
-    name:
-      type: string
-      description: 名称
+          $ref: '#/definitions/nodes'
 
 
