@@ -145,6 +145,10 @@ survey_result:
       description: 问卷答案
       allOf:
         - $ref: '#/definitions/json_str'
+    create_time:
+      $ref: '#/definitions/create_time'
+    modify_time:
+      $ref: '#/definitions/modify_time'
 survey_results:
   description: 答卷列表
   type: object
@@ -155,6 +159,17 @@ survey_results:
         data_list:
           type: array
           items:
-            $ref: '#/definitions/survey_result'
-
+            $ref: '#/definitions/survey_result_list'
+survey_result_list:
+  type: object
+  description: 答卷
+  properties:
+    id:
+      $ref: '#/definitions/id'
+    survey:
+      $ref: '#/definitions/simple_survey'
+    create_time:
+      $ref: '#/definitions/create_time'
+    modify_time:
+      $ref: '#/definitions/modify_time'
 

@@ -28,6 +28,10 @@ object result {
     Long edition_id;
 
     String extras;
+
+    Timestamp create_time;
+
+    Timestamp modify_time;
 }
 
 object edition {
