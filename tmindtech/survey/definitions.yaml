@@ -110,7 +110,13 @@ survey_tree:
         surveys:
           description: 问卷列表
           allOf:
-            - $ref: '#/definitions/surveys'
+            - $ref: '#/definitions/tree_surveys'
+tree_surveys:
+  description: 问卷列表
+  type: array
+  items:
+    $ref: '#/definitions/survey'
+
 simple_survey:
   type: object
   description: 问卷

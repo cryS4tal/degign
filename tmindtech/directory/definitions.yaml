@@ -33,7 +33,7 @@ dir_base:
     - type: object
       description: 节点列表
       properties:
-        nodes:
+        subfolders:
           $ref: '#/definitions/nodes'
 
 
