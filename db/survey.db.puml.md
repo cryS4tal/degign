@@ -1,51 +1,51 @@
 @startuml
 
 object survey {
-    Long id;
+    int64 id;
 
-    String path;
+    string path;
 
-    String name;
+    string name;
 
-    String description;
+    string description;
 
-    Boolean enabled;
+    boolean enabled;
 
-    Long edition_id;
+    int64 edition_id;
 
-    Timestamp create_time;
+    datetime create_time;
 
-    Timestamp modify_time;
+    datetime modify_time;
 }
 
 object result {
-    Long id;
+    int64 id;
 
-    Long owner_id;
+    int64 owner_id;
 
-    Long survey_id;
+    int64 survey_id;
 
-    Long edition_id;
+    int64 edition_id;
 
-    String extras;
+    string extras;
 
-    Timestamp create_time;
+    datetime create_time;
 
-    Timestamp modify_time;
+    datetime modify_time;
 }
 
 object edition {
-    Long id;
+    int64 id;
 
-    Long survey_id;
+    int64 survey_id;
 
-    String extras;
+    string extras;
 
-    Boolean enabled;
+    boolean enabled;
 
-    Timestamp create_time;
+    datetime create_time;
 
-    Timestamp modify_time;
+    datetime modify_time;
 }
 
 

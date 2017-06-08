@@ -19,9 +19,9 @@ comment:
       $ref: '#/definitions/create_time'
     modify_time:
       $ref: '#/definitions/modify_time'
-    is_plus:
+    is_deleted:
       type: boolean
-      description: 是否点赞 (当前用户)
+      description: 删除标志
 comments:
   description: 评论列表
   type: object
@@ -37,8 +37,6 @@ plus:
   type: object
   description: 点赞
   properties:
-    id:
-      $ref: '#/definitions/id'
     is_plus:
       type: boolean
       description: 是否点赞
