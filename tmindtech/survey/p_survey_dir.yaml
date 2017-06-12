@@ -4,7 +4,7 @@
       - dir
     summary: 获取目录树
     description: |
-      公开
+      登录用户
     responses:
       "200":
         $ref: '#/responses/survey_dir'
@@ -47,7 +47,7 @@
       - dir
     summary: 获取问卷目录树
     description: |
-      公开 包含问卷节点
+      登录用户 包含问卷节点
     responses:
       "200":
         $ref: '#/responses/survey_tree'
