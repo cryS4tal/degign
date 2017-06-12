@@ -1,0 +1,33 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: Tmind Notice API
+host: api.tmindtech.com
+basePath: /tmind/v1
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+tags:
+  - name: notice
+    description: 通知
+  - name: internal
+    description: 内部接口
+definitions:
+  !includes
+    - "common/definitions.yaml"
+    - "notice/definitions.yaml"
+parameters:
+  !includes
+    - "common/parameters.yaml"
+    - "notice/parameters.yaml"
+responses:
+  !includes
+    - "common/responses.yaml"
+    - "notice/responses.yaml"
+paths:
+  !includes
+    - "notice/p_notice.yaml"
+

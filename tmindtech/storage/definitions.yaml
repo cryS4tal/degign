@@ -1,0 +1,11 @@
+file_desc:
+  type: object
+  properties:
+    id:
+      $ref: '#/definitions/id'
+    create_time:
+      $ref: '#/definitions/datetime'
+    committer_id:
+      $ref: '#/definitions/id'
+    display_name:
+      type: string

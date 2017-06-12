@@ -1,0 +1,28 @@
+/files:
+  post:
+    tags:
+      - storage
+    summary: 上传文件
+    description: |
+      由于swagger的bug不能正常提交cookie，请使用PostMan进行测试
+    consumes:
+      - image/*
+    parameters:
+      - $ref: '#/parameters/upload_file'
+    responses:
+      200:
+        description: 文件信息
+        schema:
+          $ref: '#/definitions/file_desc'
+/files/{id}:
+  parameters:
+    - $ref: '#/parameters/id'
+  get:
+    tags:
+      - storage
+    summary: 下载文件「jpg」
+    produces:
+      - image/jpeg
+    responses:
+      200:
+        $ref: '#/responses/download'

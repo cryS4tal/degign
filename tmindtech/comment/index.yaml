@@ -1,0 +1,37 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: Tmind Comment API
+  description: |
+    目标类型(target_type): 0 - 答卷
+host: api.tmindtech.com
+basePath: /tmind/v1
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+tags:
+  - name: comment
+    description: 评论
+  - name: plus
+    description: 点赞
+definitions:
+  !includes
+    - "common/definitions.yaml"
+    - "account/definitions.yaml"
+    - "comment/definitions.yaml"
+parameters:
+  !includes
+    - "common/parameters.yaml"
+    - "account/parameters.yaml"
+    - "comment/parameters.yaml"
+responses:
+  !includes
+    - "common/responses.yaml"
+    - "comment/responses.yaml"
+paths:
+  !includes
+    - "comment/p_comment.yaml"
+

@@ -1,0 +1,39 @@
+real_name_f:
+  in: formData
+  name: real_name
+  description: 真实姓名
+  type: string
+work_place_f:
+  in: formData
+  name: work_place
+  description: 工作场所
+  type: string
+is_approved_f:
+  in: formData
+  name: is_approved
+  description: 是否通过审核
+  type: boolean
+result_msg_f:
+  in: formData
+  name: result_msg
+  description: 审核意见
+  type: string
+paths_f:
+  in: formData
+  name: paths
+  description: 分类路径列表
+  type: array
+  items:
+    type: string
+state_q:
+  in: query
+  name: state
+  description: 0-审核中 1-审核通过 2-审核失败
+  type: integer
+name_q:
+  in: query
+  name: name
+  description: 姓名
+  type: string
+
+

@@ -1,0 +1,24 @@
+/depts:
+  get:
+    tags:
+      - department
+    summary: 获取部门列表
+    description: 系统.部门查看
+    parameters:
+      - $ref: '#/parameters/limit_q'
+      - $ref: '#/parameters/offset_q'
+      - $ref: '#/parameters/name_like_q'
+    responses:
+      200:
+        $ref: '#/responses/depts'
+/depts/{dept_id}:
+  parameters:
+    - $ref: '#/parameters/dept_id'
+  get:
+    tags:
+      - department
+    summary: 获取部门信息
+    description: 系统.部门查看
+    responses:
+      200:
+        $ref: '#/responses/dept'

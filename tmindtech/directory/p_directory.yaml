@@ -1,0 +1,54 @@
+/directory/{path}:
+  parameters:
+    - $ref: '#/parameters/path'
+  get:
+    tags:
+      - path
+    summary: 获取目录详情
+    description: |
+      get_files = true，返回文件节点
+
+      recursive = true，递归获取所有内容
+    parameters:
+      - $ref: '#/parameters/get_files_q'
+      - $ref: '#/parameters/recursive_q'
+    responses:
+      "200":
+        $ref: '#/responses/dir_base'
+  post:
+    tags:
+      - path
+    summary: 新建文件(夹)
+    parameters:
+      - $ref: '#/parameters/name_f'
+      - $ref: '#/parameters/desc_f'
+      - $ref: '#/parameters/node_type_f'
+      - $ref: '#/parameters/extras_f'
+    responses:
+      "200":
+        $ref: '#/responses/node'
+  patch:
+    tags:
+      - path
+    summary: 更新文件(夹)
+    parameters:
+      - $ref: '#/parameters/name_f'
+      - $ref: '#/parameters/desc_f'
+      - $ref: '#/parameters/extras_f'
+    responses:
+      "200":
+        $ref: '#/responses/opt_success'
+  delete:
+    tags:
+      - path
+    summary: 删除文件(夹)
+    description: |
+
+      不提供递归功能防止误操作。文件夹下存在文件时，无法删除文件夹。
+
+      允许指定删除的节点类型 避免误删
+    parameters:
+      - $ref: '#/parameters/node_type_q'
+    responses:
+      "200":
+        $ref: '#/responses/opt_success'

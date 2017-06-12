@@ -1,0 +1,49 @@
+/survey_results:
+  get:
+    tags:
+      - survey_result
+    summary: 获取答卷列表
+    description: |
+      系统.答卷管理 个人
+    parameters:
+      - $ref: '#/parameters/owner_id_q'
+      - $ref: '#/parameters/survey_id_q'
+      - $ref: '#/parameters/edition_id_q'
+      - $ref: '#/parameters/offset_q'
+      - $ref: '#/parameters/limit_q'
+    responses:
+      "200":
+        $ref: '#/responses/survey_results'
+  post:
+    tags:
+      - survey_result
+    summary: 添加答卷
+    description: 个人
+    parameters:
+      - $ref: '#/parameters/edition_id_f'
+      - $ref: '#/parameters/extras_f'
+    responses:
+      "200":
+        $ref: '#/responses/survey_result'
+/survey_results/{id}:
+  put:
+    tags:
+      - survey_result
+    summary: 添加答卷
+    description: 个人
+    parameters:
+      - $ref: '#/parameters/id'
+      - $ref: '#/parameters/extras_f'
+    responses:
+      "200":
+        $ref: '#/responses/survey_result'
+  get:
+    tags:
+      - survey_result
+    summary: 查询答卷
+    description: 个人
+    parameters:
+      - $ref: '#/parameters/id'
+    responses:
+      "200":
+        $ref: '#/responses/survey_result'

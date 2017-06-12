@@ -1,0 +1,20 @@
+lawyer_cards:
+  description: 律师名片列表
+  schema:
+    $ref: '#/definitions/lawyer_cards'
+lawyer_card:
+  description: 律师名片
+  schema:
+    $ref: '#/definitions/lawyer_card'
+lawyer_verify_review:
+  description: 律师认证审核
+  schema:
+    $ref: '#/definitions/lawyer_verify_review'
+lawyer_verify_reviews:
+  description: 律师认证审核列表
+  schema:
+    $ref: '#/definitions/lawyer_verify_reviews'
+survey_dirs:
+  description: 问卷分类列表
+  schema:
+    $ref: '#/definitions/survey_dirs'

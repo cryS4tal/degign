@@ -1,0 +1,47 @@
+/own:
+  get:
+    tags:
+      - auth
+    summary: 获取登录信息
+    responses:
+      200:
+        $ref: '#/responses/account_full'
+  delete:
+    tags:
+      - auth
+    summary: 登出
+    responses:
+      200:
+        $ref: '#/responses/opt_success'
+/login/super:
+  post:
+    tags:
+      - auth
+    summary: 超级管理员登录 限制登录IP
+    responses:
+      200:
+        $ref: '#/responses/account_full'
+/login/oauth2_uaa:
+  get:
+    tags:
+      - auth
+    summary: 登录跳转(测试用）
+    description: |
+      测试用接口 正常情况不包含code
+    parameters:
+      - $ref: '#/parameters/redirect_url_q'
+      - $ref: '#/parameters/redirect_state_q'
+      - $ref: '#/parameters/code_q'
+    responses:
+      "302":
+        description: 跳转至UAA OAuth 2.0页面
+  post:
+    tags:
+      - auth
+    summary: UAA OAuth2.0 登录(测试用）
+    parameters:
+      - $ref: '#/parameters/code_f'
+    responses:
+      200:
+        $ref: '#/responses/account_full'
+

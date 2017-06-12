@@ -1,0 +1,36 @@
+path_q:
+  in: query
+  name: path
+  description: 目录路径
+  type: string
+path_f:
+  in: formData
+  name: path
+  description: 目录路径
+  type: string
+enabled_q:
+  in: query
+  name: enabled
+  description: 是否上架(发布)
+  type: boolean
+enabled_f:
+  in: formData
+  name: enabled
+  description: 是否上架(发布)
+  type: boolean
+edition_id_q:
+  in: query
+  name: edition_id
+  description: 版本Id
+  type: integer
+edition_id_f:
+  in: formData
+  name: edition_id
+  description: 版本Id
+  type: integer
+survey_id_q:
+  in: query
+  name: survey_id
+  description: 问卷Id
+  type: integer
+

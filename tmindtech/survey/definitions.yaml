@@ -1,0 +1,175 @@
+survey_edition:
+  type: object
+  description: 问卷版本
+  properties:
+    id:
+      $ref: '#/definitions/id'
+    survey_id:
+      description: 问卷Id
+      allOf:
+        - $ref: '#/definitions/id'
+    extras:
+      description: 问卷数据
+      allOf:
+        - $ref: '#/definitions/json_str'
+    enabled:
+      description: 是否发布
+      type: boolean
+    create_time:
+      $ref: '#/definitions/create_time'
+    modify_time:
+      $ref: '#/definitions/modify_time'
+survey_edition_detail:
+  type: object
+  description: 问卷版本
+  properties:
+    id:
+      $ref: '#/definitions/id'
+    survey:
+      description: 问卷
+      allOf:
+        - $ref: '#/definitions/edition_survey'
+    extras:
+      description: 问卷数据
+      allOf:
+        - $ref: '#/definitions/json_str'
+    enabled:
+      description: 是否发布
+      type: boolean
+    create_time:
+      $ref: '#/definitions/create_time'
+    modify_time:
+      $ref: '#/definitions/modify_time'
+survey:
+  type: object
+  description: 问卷
+  properties:
+    id:
+      $ref: '#/definitions/id'
+    path:
+      description: 路径
+      type: string
+    name:
+      description: 标题
+      type: string
+    description:
+      description: 描述
+      type: string
+    enabled:
+      description: 是否上架
+      type: boolean
+    edition:
+      description: 版本信息 (默认为当前版本)
+      allOf:
+        - $ref: '#/definitions/survey_edition'
+    create_time:
+      $ref: '#/definitions/create_time'
+    modify_time:
+      $ref: '#/definitions/modify_time'
+edition_survey:
+  type: object
+  description: 问卷
+  properties:
+    id:
+      $ref: '#/definitions/id'
+    name:
+      description: 标题
+      type: string
+    description:
+      description: 描述
+      type: string
+surveys:
+  description: 问卷列表
+  type: object
+  allOf:
+    - $ref: '#/definitions/array_base'
+    - type: object
+      properties:
+        data_list:
+          type: array
+          items:
+            $ref: '#/definitions/survey'
+survey_editions:
+  description: 问卷版本列表
+  type: object
+  allOf:
+    - $ref: '#/definitions/array_base'
+    - type: object
+      properties:
+        data_list:
+          type: array
+          items:
+            $ref: '#/definitions/survey_edition'
+survey_tree:
+  type: object
+  description: 问卷目录(包含问卷)
+  allOf:
+    - $ref: '#/definitions/dir_base'
+    - type: object
+      properties:
+        surveys:
+          description: 问卷列表
+          allOf:
+            - $ref: '#/definitions/tree_surveys'
+tree_surveys:
+  description: 问卷列表
+  type: array
+  items:
+    $ref: '#/definitions/survey'
+
+simple_survey:
+  type: object
+  description: 问卷
+  properties:
+    id:
+      $ref: '#/definitions/id'
+    name:
+      description: 标题
+      type: string
+    description:
+      description: 描述
+      type: string
+    edition_id:
+      description: 版本Id
+      allOf:
+        - $ref: '#/definitions/id'
+survey_result:
+  type: object
+  description: 答卷
+  properties:
+    id:
+      $ref: '#/definitions/id'
+    survey:
+      $ref: '#/definitions/simple_survey'
+    extras:
+      description: 问卷答案
+      allOf:
+        - $ref: '#/definitions/json_str'
+    create_time:
+      $ref: '#/definitions/create_time'
+    modify_time:
+      $ref: '#/definitions/modify_time'
+survey_results:
+  description: 答卷列表
+  type: object
+  allOf:
+    - $ref: '#/definitions/array_base'
+    - type: object
+      properties:
+        data_list:
+          type: array
+          items:
+            $ref: '#/definitions/survey_result_list'
+survey_result_list:
+  type: object
+  description: 答卷
+  properties:
+    id:
+      $ref: '#/definitions/id'
+    survey:
+      $ref: '#/definitions/simple_survey'
+    create_time:
+      $ref: '#/definitions/create_time'
+    modify_time:
+      $ref: '#/definitions/modify_time'
+

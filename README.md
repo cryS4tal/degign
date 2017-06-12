@@ -1,7 +1,5 @@
-# API设计基础项目
-本项目用于提供API设计初始模板
-
-新的API设计项目可以从本项目Fork后展开
+# 法喵设计项目
+提供法喵项目的服务端设计和API定义
 
 ## Feature
 | 功能 | 工具 | 展示 |
@@ -21,7 +19,15 @@
 ## 测试服务地址
 提供测试用的Swagger UI地址
 
-[example](http://swagger.tmindtech.com/?url=https://apitest.tmindtech.com/base/doc/d/example)
+[account](http://swagger.tmindtech.com/?url=https://apitest.tmindtech.com/lawcat/doc/d/account)
+[notice](http://swagger.tmindtech.com/?url=https://apitest.tmindtech.com/lawcat/doc/d/notice)
+[survey](http://swagger.tmindtech.com/?url=https://apitest.tmindtech.com/lawcat/doc/d/survey)
+[storage](http://swagger.tmindtech.com/?url=https://apitest.tmindtech.com/lawcat/doc/d/storage)
+[comment](http://swagger.tmindtech.com/?url=https://apitest.tmindtech.com/lawcat/doc/d/comment)
+[lawyer](http://swagger.tmindtech.com/?url=https://apitest.tmindtech.com/lawcat/doc/d/lawyer)
+
+### internal
+[directory](http://swagger.tmindtech.com/?url=https://apitest.tmindtech.com/lawcat/doc/d/directory)
 
 # 如何开始
 ## 开发环境

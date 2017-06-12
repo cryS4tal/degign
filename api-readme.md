@@ -80,4 +80,4 @@ centos推荐额外安装libyaml，可提高性能`sudo yum install libyaml-devel
 
 ### Tips
 #### API书写补全
-导入配置[idea_live_template.md](./api/idea_live_template.md)
+导入配置[idea_live_template.md](./idea_live_template.md)

@@ -1,0 +1,42 @@
+surveys:
+  description: 问卷列表
+  schema:
+    $ref: '#/definitions/surveys'
+survey:
+  description: 问卷
+  schema:
+    $ref: '#/definitions/survey'
+survey_editions:
+  description: 问卷版本列表
+  schema:
+    $ref: '#/definitions/survey_editions'
+survey_edition:
+  description: 问卷版本
+  schema:
+    $ref: '#/definitions/survey_edition'
+survey_edition_detail:
+  description: 问卷版本详细
+  schema:
+    $ref: '#/definitions/survey_edition_detail'
+survey_dir:
+  description: 问卷目录
+  schema:
+    $ref: '#/definitions/dir_base'
+survey_dir_node:
+  description: 问卷目录节点
+  schema:
+    $ref: '#/definitions/node'
+survey_tree:
+  description: 问卷目录(包含问卷)
+  schema:
+    $ref: '#/definitions/survey_tree'
+survey_results:
+  description: 答卷列表
+  schema:
+    $ref: '#/definitions/survey_results'
+survey_result:
+  description: 答卷
+  schema:
+    $ref: '#/definitions/survey_result'
+
+

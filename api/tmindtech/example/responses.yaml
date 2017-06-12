@@ -1,8 +1,0 @@
-example:
-  description: 示例
-  schema:
-    $ref: '#/definitions/example'
-examples:
-  description: 示例列表
-  schema:
-    $ref: '#/definitions/examples'

@@ -1,0 +1,172 @@
+/permissions:
+  get:
+    tags:
+      - permission
+    summary: 获取权限信息列表
+    description: 公开
+    parameters:
+      - $ref: '#/parameters/permission_type'
+    responses:
+      200:
+        $ref: '#/responses/permissions'
+/roles:
+  get:
+    tags:
+      - role
+    summary: 获取角色列表
+    description: |
+      部门.角色管理
+
+      必须指定dept_id
+    parameters:
+      - $ref: '#/parameters/opt_dept_id'
+      - $ref: '#/parameters/dept_id_q'
+    responses:
+      200:
+        $ref: '#/responses/roles'
+  post:
+    tags:
+      - role
+    summary: 新增角色
+    description: |
+      部门.角色管理
+
+      系统预设和部门预设需要系统权限, 预设角色的修改将作用于所有部门
+
+      部门角色需部门权限
+
+      系统角色不可绑定部门权限，反之亦然
+    parameters:
+      - $ref: '#/parameters/opt_dept_id'
+      - $ref: '#/parameters/name_f'
+      - $ref: '#/parameters/desc_f'
+      - $ref: '#/parameters/dept_id_f'
+      - $ref: '#/parameters/permission_id_a'
+    responses:
+      200:
+        $ref: '#/responses/opt_success'
+      "403":
+        $ref: '#/responses/opt_failed'
+/roles/predefined:
+  get:
+    tags:
+      - role
+    summary: 获取预设角色列表
+    description: |
+      系统管理员
+    parameters:
+      - name: is_system
+        description: 是-系统角色 否-部门角色 无-所有角色
+        type: boolean
+        in: query
+    responses:
+      200:
+        $ref: '#/responses/roles'
+/roles/{id}:
+  parameters:
+    - $ref: '#/parameters/id'
+  put:
+    tags:
+      - role
+    summary: 更新角色信息
+    description: 部门.角色管理
+    parameters:
+      - $ref: '#/parameters/opt_dept_id'
+      - $ref: '#/parameters/name_f'
+      - $ref: '#/parameters/desc_f'
+      - $ref: '#/parameters/permission_id_a'
+    responses:
+      200:
+        $ref: '#/responses/opt_success'
+      "403":
+        $ref: '#/responses/opt_failed'
+  delete:
+    tags:
+      - role
+    summary: 删除角色
+    description: |
+      部门.角色管理
+
+      预设角色不能删除
+
+      已使用的角色不能删除
+
+    responses:
+      200:
+        $ref: '#/responses/opt_success'
+      "403":
+        $ref: '#/responses/opt_failed'
+
+/accounts/{account_id}/roles:
+  parameters:
+    - $ref: '#/parameters/account_id'
+  get:
+    tags:
+      - account
+      - role
+    summary: 获取用户角色列表
+    parameters:
+      - $ref: '#/parameters/opt_dept_id'
+      - $ref: '#/parameters/dept_id_q'
+    responses:
+      200:
+        $ref: '#/responses/roles'
+  put:
+    tags:
+      - account
+      - role
+    summary: 设定用户角色
+    description: |
+      部门.人员管理
+
+      通过参数限定只能对指定部门的权限，进行一次性设定
+    parameters:
+      - $ref: '#/parameters/opt_dept_id'
+      - $ref: '#/parameters/dept_id_f'
+      - $ref: '#/parameters/role_id_a'
+    responses:
+      200:
+        $ref: '#/responses/opt_success'
+      "403":
+        $ref: '#/responses/opt_failed'
+  post:
+    tags:
+      - account
+      - role
+    summary: 添加用户角色
+    description: |
+      部门 人员管理
+    parameters:
+      - $ref: '#/parameters/opt_dept_id'
+      - $ref: '#/parameters/dept_id_f'
+      - $ref: '#/parameters/role_id_f'
+    responses:
+      200:
+        $ref: '#/responses/opt_success'
+  delete:
+    tags:
+      - account
+      - role
+    summary: 删除用户角色
+    description: |
+      部门 人员管理
+    parameters:
+      - $ref: '#/parameters/opt_dept_id'
+      - $ref: '#/parameters/dept_id_f'
+      - $ref: '#/parameters/role_id_f'
+    responses:
+      200:
+        $ref: '#/responses/opt_success'
+/own/depts/{dept_id}/permissions/{permission_id}:
+  parameters:
+    - $ref: '#/parameters/dept_id'
+    - $ref: '#/parameters/permission_id'
+  get:
+    tags:
+      - permission
+    summary: 检测自己是否具有某个元权限
+    responses:
+      200:
+        $ref: '#/responses/opt_success'
+      "403":
+        $ref: '#/responses/opt_failed'
