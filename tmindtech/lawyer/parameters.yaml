@@ -13,11 +13,6 @@ is_approved_f:
   name: is_approved
   description: 是否通过审核
   type: boolean
-is_approved_q:
-  in: query
-  name: is_approved
-  description: 是否通过审核
-  type: boolean
 result_msg_f:
   in: formData
   name: result_msg
@@ -30,5 +25,15 @@ paths_f:
   type: array
   items:
     type: string
+state_q:
+  in: query
+  name: state
+  description: 0-审核中 1-审核通过 2-审核失败
+  type: integer
+name_q:
+  in: query
+  name: name
+  description: 姓名
+  type: string
 
 

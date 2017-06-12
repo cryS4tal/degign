@@ -61,6 +61,8 @@ lawyer_verify_review:
       type: array
       items:
         type: string
+    paths:
+      $ref: '#/definitions/simple_dirs'
     state:
       description: 状态 0-审核中 1-审核通过 2-审核失败
       type: integer
@@ -82,4 +84,18 @@ lawyer_verify_reviews:
           type: array
           items:
             $ref: '#/definitions/lawyer_verify_review'
+simple_dir:
+  type: object
+  description: 律师分类
+  properties:
+    path:
+      description: 分类路径path
+      type: string
+    name:
+      description: 分类路径name
+      type: string
+simple_dirs:
+  type: array
+  items:
+    $ref: '#/definitions/simple_dir'
 

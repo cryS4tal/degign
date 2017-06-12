@@ -34,7 +34,8 @@
     description: |
       权限: 管理员
     parameters:
-      - $ref: '#/parameters/is_approved_q'
+      - $ref: '#/parameters/state_q'
+      - $ref: '#/parameters/name_q'
       - $ref: '#/parameters/offset_q'
       - $ref: '#/parameters/limit_q'
     responses:
@@ -52,6 +53,7 @@
       - $ref: '#/parameters/real_name_f'
       - $ref: '#/parameters/work_place_f'
       - $ref: '#/parameters/images_f'
+      - $ref: '#/parameters/paths_f'
     responses:
       200:
         $ref: '#/responses/lawyer_verify_review'
