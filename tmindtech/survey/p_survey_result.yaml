@@ -21,6 +21,7 @@
     description: 个人
     parameters:
       - $ref: '#/parameters/edition_id_f'
+      - $ref: '#/parameters/key_words_f'
       - $ref: '#/parameters/extras_f'
     responses:
       "200":
@@ -29,10 +30,11 @@
   put:
     tags:
       - survey_result
-    summary: 添加答卷
+    summary: 更新答卷
     description: 个人
     parameters:
       - $ref: '#/parameters/id'
+      - $ref: '#/parameters/key_words_f'
       - $ref: '#/parameters/extras_f'
     responses:
       "200":

@@ -42,8 +42,6 @@
       enabled为false则需要系统权限，否则公开
 
       设定edition_id获取指定版本的信息
-    parameters:
-      - $ref: '#/parameters/edition_id_q'
     responses:
       "200":
         $ref: '#/responses/survey'

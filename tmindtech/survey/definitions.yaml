@@ -145,6 +145,11 @@ survey_result:
       description: 问卷答案
       allOf:
         - $ref: '#/definitions/json_str'
+    key_works:
+      description: 关键字
+      type: array
+      items:
+        type: string
     create_time:
       $ref: '#/definitions/create_time'
     modify_time:
