@@ -33,4 +33,10 @@ survey_id_q:
   name: survey_id
   description: 问卷Id
   type: integer
-
+keywords_f:
+  in: formData
+  name: keywords
+  description: 关键字
+  type: array
+  items:
+    type: string
