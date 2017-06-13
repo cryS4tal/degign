@@ -40,8 +40,6 @@
     summary: 获取问卷详情
     description: |
       enabled为false则需要系统权限，否则公开
-
-      设定edition_id获取指定版本的信息
     responses:
       "200":
         $ref: '#/responses/survey'
