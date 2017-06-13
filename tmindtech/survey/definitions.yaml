@@ -145,7 +145,7 @@ survey_result:
       description: 问卷答案
       allOf:
         - $ref: '#/definitions/json_str'
-    key_works:
+    keywords:
       description: 关键字
       type: array
       items:
