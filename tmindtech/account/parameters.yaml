@@ -143,3 +143,13 @@ is_bind_login_f:
   description: 是否绑定登录
   in: formData
   type: boolean
+encrypted_data_f:
+  name: encrypted_data
+  description: 密文
+  in: formData
+  type: string
+iv_f:
+  name: iv
+  description: 偏移量
+  in: formData
+  type: string

@@ -24,3 +24,27 @@
         description: 需要手机号登录
         schema:
           $ref: '#/definitions/error'
+/login/oauth2_wechatApp/lawyer:
+  post:
+    tags:
+      - auth
+    summary: 微信app律师端登录
+    parameters:
+      - $ref: '#/parameters/code_f'
+      - $ref: '#/parameters/encrypted_data_f'
+      - $ref: '#/parameters/iv_f'
+    responses:
+      200:
+        $ref: '#/responses/account_full'
+/login/oauth2_wechatApp/mass:
+  post:
+    tags:
+      - auth
+    summary: 微信app用户端登录
+    parameters:
+      - $ref: '#/parameters/code_f'
+      - $ref: '#/parameters/encrypted_data_f'
+      - $ref: '#/parameters/iv_f'
+    responses:
+      200:
+        $ref: '#/responses/account_full'
