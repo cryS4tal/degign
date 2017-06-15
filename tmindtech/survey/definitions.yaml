@@ -139,17 +139,22 @@ survey_result:
   properties:
     id:
       $ref: '#/definitions/id'
+    account:
+      $ref: '#/definitions/simple_account'
     survey:
       $ref: '#/definitions/simple_survey'
     extras:
       description: 问卷答案
       allOf:
         - $ref: '#/definitions/json_str'
-    keywords:
+    key_params:
       description: 关键字
       type: array
       items:
-        type: string
+        - $ref: '#/definitions/key_param'
+    version:
+      description: 回答editionId
+      type: integer
     create_time:
       $ref: '#/definitions/create_time'
     modify_time:
@@ -171,10 +176,42 @@ survey_result_list:
   properties:
     id:
       $ref: '#/definitions/id'
+    account:
+      $ref: '#/definitions/simple_account'
     survey:
       $ref: '#/definitions/simple_survey'
+    key_params:
+      description: 关键字
+      type: array
+      items:
+        - $ref: '#/definitions/key_param'
+    version:
+      description: 回答editionId
+      type: integer
     create_time:
       $ref: '#/definitions/create_time'
     modify_time:
       $ref: '#/definitions/modify_time'
+simple_account:
+  type: object
+  description: 用户
+  properties:
+    id:
+      $ref: '#/definitions/id'
+    nickname:
+      description: 昵称
+      type: string
+    avatar:
+      description: 头像
+      type: string
+key_param:
+  type: object
+  description: 关键信息
+  properties:
+    name:
+      description: 名称
+      type: string
+    value:
+      description: 值
+      type: string
 

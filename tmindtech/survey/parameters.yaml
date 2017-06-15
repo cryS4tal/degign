@@ -33,10 +33,26 @@ survey_id_q:
   name: survey_id
   description: 问卷Id
   type: integer
-keywords_f:
-  in: formData
-  name: keywords
-  description: 关键字
-  type: array
-  items:
-    type: string
+request_b:
+  in: body
+  name: result_body
+  description: 请求body
+  schema:
+    type: object
+    properties:
+      id:
+        description: post为editionId,put为resultId
+        type: integer
+      key_params:
+        type: array
+        items:
+          $ref: '#/definitions/key_param'
+      extras:
+        description: 数据
+        type: string
+key_param:
+  properties:
+    name:
+      type: string
+    value:
+      type: string
