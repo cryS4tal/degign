@@ -24,7 +24,7 @@
         description: 需要手机号登录
         schema:
           $ref: '#/definitions/error'
-/login/oauth2_wechatApp/lawyer:
+/login/oauth2_weapp/lawyer:
   post:
     tags:
       - auth
@@ -36,7 +36,7 @@
     responses:
       200:
         $ref: '#/responses/account_full'
-/login/oauth2_wechatApp/mass:
+/login/oauth2_weapp/mass:
   post:
     tags:
       - auth
