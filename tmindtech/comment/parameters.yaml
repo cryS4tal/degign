@@ -23,3 +23,8 @@ target_type_q:
   name: target_type
   description: 目标类型
   type: integer
+owner_id_q:
+  in: query
+  name: owner_id
+  description: 所有者id
+  type: integer

@@ -8,6 +8,7 @@
     parameters:
       - $ref: '#/parameters/target_id_q'
       - $ref: '#/parameters/target_type_q'
+      - $ref: '#/parameters/owner_id_q'
       - $ref: '#/parameters/offset_q'
       - $ref: '#/parameters/limit_q'
     responses:
@@ -90,3 +91,4 @@
     responses:
       200:
         $ref: '#/responses/opt_success'
+
