@@ -24,16 +24,6 @@
     responses:
       "200":
         $ref: '#/responses/survey_result'
-  put:
-    tags:
-      - survey_result
-    summary: 更新答卷
-    description: 个人
-    parameters:
-      - $ref: '#/parameters/request_b'
-    responses:
-      "200":
-        $ref: '#/responses/survey_result'
 /survey_results/{id}:
   get:
     tags:
