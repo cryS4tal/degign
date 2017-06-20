@@ -52,7 +52,7 @@
       - survey_result
     summary: 获取自己评论过的答卷列表
     description: |
-      律师
+      权限：读取评论
     parameters:
       - $ref: '#/parameters/offset_q'
       - $ref: '#/parameters/limit_q'
