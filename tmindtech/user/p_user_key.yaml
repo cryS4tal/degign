@@ -1,0 +1,12 @@
+/user/secret:
+  post:
+    tags:
+      - secret
+    summary: 设置商户私钥
+
+    parameters:
+      - $ref: '#/parameters/user_id_f'
+      - $ref: '#/parameters/secret_key_f'
+    responses:
+      200:
+        $ref: '#/responses/opt_success'

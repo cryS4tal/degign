@@ -1,0 +1,159 @@
+verify_code_f:
+  name: code
+  description: 验证码
+  in: formData
+  type: string
+phone_f:
+  name: phone
+  description: 手机号
+  in: formData
+  type: string
+  required: true
+password_f:
+  name: password
+  description: 密码
+  in: formData
+  type: string
+user_id_q:
+  name: user_id
+  in: query
+  description: 用户Id
+  type: integer
+  format: int64
+user_id_f:
+  name: user_id
+  in: formData
+  description: 用户Id
+  type: integer
+  format: int64
+  required: true
+name_f:
+  name: name
+  in: formData
+  description: 姓名
+  type: string
+  required: true
+identity_card_f:
+  name: identity_card
+  in: formData
+  description: 身份证
+  type: string
+  required: true
+bankcard_number_f:
+  name: bankcard_number
+  in: formData
+  description: 银行卡号
+  type: string
+  required: true
+reserved_phone_f:
+  name: reserved_phone
+  in: formData
+  description: 预留手机号
+  type: string
+  required: true
+bank_type_f:
+  name: bank_type
+  in: formData
+  description: 银行卡类型，暂时可以不用
+  type: integer
+open_bank_f:
+  name: open_bank
+  in: formData
+  description: 开户行
+  type: string
+  required: true
+sub_bank_f:
+  name: sub_bank
+  in: formData
+  description: 开户支行
+  type: string
+  required: true
+charge_type_f:
+  name: charge_type
+  in: formData
+  description: 提现类型：chargeType = 1; 定额；chargeType = 2; 百分比
+  type: integer
+  required: true
+charge_rate_f:
+  name: charge_rate
+  in: formData
+  description: 提现费率：chargeRate 分 / n % 100 * 100.
+  type: integer
+  required: true
+name_q:
+  name: name
+  in: query
+  description: 姓名，模糊查询
+  type: string
+identity_card_q:
+  name: identity_card
+  in: query
+  description: 身份证
+  type: string
+bankcard_number_q:
+  name: bankcard_number
+  in: query
+  description: 银行卡号
+  type: string
+reserved_phone_q:
+  name: reserved_phone
+  in: query
+  description: 预留手机号
+  type: string
+open_bank_q:
+  name: open_bank
+  in: query
+  description: 开户行：模糊查询
+  type: string
+sub_bank_q:
+  name: sub_bank
+  in: query
+  description: 开户支行：模糊查询
+  type: string
+begin_time_q:
+  name: begin_time
+  in: query
+  type: string
+  description: 开始时间
+  format: 'date-time'
+end_time_q:
+  name: end_time
+  in: query
+  type: string
+  description: 结束时间
+  format: 'date-time'
+id:
+  name: id
+  description: id
+  required: true
+  in: path
+  type: integer
+  format: int64
+app_name_f:
+  name: app_name
+  in: formData
+  description: 应用名称
+  type: string
+  required: true
+app_id_f:
+  name: app_id
+  in: formData
+  description: 应用id
+  type: string
+status_f:
+  name: status
+  in: formData
+  description: true - 激活,false - 弃用
+  type: boolean
+secret_key_f:
+  name: secret_key
+  in: formData
+  description: 商户私钥
+  type: string
+id:
+  in: path
+  name: id
+  description: id
+  type: integer
+  format: int64
+  required: true

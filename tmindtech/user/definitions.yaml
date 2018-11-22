@@ -1,0 +1,91 @@
+user_info:
+  type: object
+  description: 商户结算信息
+  properties:
+    id:
+      $ref: '#/definitions/id'
+    user_id:
+      description: 部门Id
+      allOf:
+        - $ref: '#/definitions/id'
+    name:
+      description: 姓名
+      type: string
+    identity_card:
+      description: 身份证
+      type: string
+    bankcard_number:
+      description: 银行卡
+      type: string
+    reserved_phone:
+      description: 预留电话
+      type: string
+    bank_type:
+      description: 银行卡类型
+      type: string
+    open_bank:
+      description: 开户行
+      type: string
+    sub_bank:
+      description: 开户支行
+      type: string
+    charge_type:
+      description: 提现类型：1-单次定额；2-单次百分比
+      type: integer
+    charge_rate:
+      description: 提现费率：charge_type = 1，单位为分；charge_type = 2；单位为 万分之n；
+      type: integer
+infos:
+  type: object
+  allOf:
+    - $ref: '#/definitions/array_base'
+    - type: object
+      properties:
+        permissions:
+          type: array
+          items:
+            $ref: '#/definitions/user_info'
+apps:
+  type: object
+  allOf:
+    - $ref: '#/definitions/array_base'
+    - type: object
+      properties:
+        permissions:
+          type: array
+          items:
+            $ref: '#/definitions/app'
+app:
+  type: object
+  description: 商户结算信息
+  properties:
+    id:
+      $ref: '#/definitions/id'
+    user_id:
+      description: 部门Id
+      allOf:
+        - $ref: '#/definitions/id'
+    app_id:
+      description: 应用id
+      allOf:
+        - $ref: '#/definitions/id'
+    app_name:
+      description: 应用名
+      type: string
+    nickname:
+      description: 商户昵称
+      type: string
+    status:
+      description: 应用状态
+      type: boolean
+    create_time:
+      type: string
+      description: 创建时间
+      format: 'date-time'
+    modify_time:
+      type: string
+      description: 修改时间
+      format: 'date-time'
+
+
+

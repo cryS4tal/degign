@@ -20,11 +20,7 @@
 提供测试用的Swagger UI地址
 
 [account](http://swagger.tmindtech.com/?url=https://apitest.tmindtech.com/lawcat/doc/d/account)
-[notice](http://swagger.tmindtech.com/?url=https://apitest.tmindtech.com/lawcat/doc/d/notice)
-[survey](http://swagger.tmindtech.com/?url=https://apitest.tmindtech.com/lawcat/doc/d/survey)
 [storage](http://swagger.tmindtech.com/?url=https://apitest.tmindtech.com/lawcat/doc/d/storage)
-[comment](http://swagger.tmindtech.com/?url=https://apitest.tmindtech.com/lawcat/doc/d/comment)
-[lawyer](http://swagger.tmindtech.com/?url=https://apitest.tmindtech.com/lawcat/doc/d/lawyer)
 
 ### internal
 [directory](http://swagger.tmindtech.com/?url=https://apitest.tmindtech.com/lawcat/doc/d/directory)

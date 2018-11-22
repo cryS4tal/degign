@@ -1,9 +1,9 @@
 swagger: '2.0'
 info:
   version: 1.0.0
-  title: DtDream Directory API
+  title: Account API
 host: api.tmindtech.com
-basePath: /dtdream/v2
+basePath:
 schemes:
   - https
 consumes:
@@ -11,22 +11,21 @@ consumes:
 produces:
   - application/json
 tags:
-  - name: path
-    description: 目录
+  - name: auth
+    description: 登录授权与登出
 definitions:
   !includes
     - "common/definitions.yaml"
-    - "directory/definitions.yaml"
+    - "auth/definitions.yaml"
 parameters:
   !includes
     - "common/parameters.yaml"
-    - "directory/parameters.yaml"
+    - "auth/parameters.yaml"
 responses:
   !includes
     - "common/responses.yaml"
-    - "directory/responses.yaml"
+    - "auth/responses.yaml"
 paths:
   !includes
-    - "directory/p_directory.yaml"
-
+    - "auth/p_phone_auth.yaml"
 

@@ -1,0 +1,86 @@
+/user/settlement:
+  get:
+    tags:
+      - settlement
+    summary: 商户结算信息
+
+    parameters:
+      - $ref: '#/parameters/user_id_q'
+    responses:
+      200:
+        $ref: '#/responses/user_info'
+/user/settlement/{id}:
+  delete:
+    tags:
+      - settlement
+    summary: 删除结算信息
+    description: |
+      ```
+      权限设定系统管理员，权限id:51001
+      ```
+    parameters:
+      - $ref: '#/parameters/id'
+    responses:
+      200:
+        $ref: '#/responses/opt_success'
+/user/settlement/own:
+  post:
+    tags:
+      - settlement
+    summary: 设置 & 更新商户结算信息
+    description: |
+      ```
+      权限设定为用户本人 或者 系统管理员，权限id:51001
+      ```
+    parameters:
+      - $ref: '#/parameters/user_id_f'
+      - $ref: '#/parameters/name_f'
+      - $ref: '#/parameters/identity_card_f'
+      - $ref: '#/parameters/bankcard_number_f'
+      - $ref: '#/parameters/reserved_phone_f'
+      - $ref: '#/parameters/bank_type_f'
+      - $ref: '#/parameters/open_bank_f'
+      - $ref: '#/parameters/sub_bank_f'
+    responses:
+      200:
+        $ref: '#/responses/user_info'
+/user/settlement/charge:
+  post:
+    tags:
+      - settlement
+    summary: 设置商户提现费率
+    description: |
+      ```
+      权限设定系统管理员，权限id:51001
+      ```
+    parameters:
+      - $ref: '#/parameters/user_id_f'
+      - $ref: '#/parameters/charge_type_f'
+      - $ref: '#/parameters/charge_rate_f'
+    responses:
+      200:
+        $ref: '#/responses/user_info'
+/user/settlement/list:
+  get:
+    tags:
+      - settlement
+    summary: 获取商户结算列表
+    description: |
+      ```
+      权限设定系统管理员，权限id:51001
+      ```
+    parameters:
+      - $ref: '#/parameters/user_id_q'
+      - $ref: '#/parameters/name_q'
+      - $ref: '#/parameters/identity_card_q'
+      - $ref: '#/parameters/bankcard_number_q'
+      - $ref: '#/parameters/reserved_phone_q'
+      - $ref: '#/parameters/open_bank_q'
+      - $ref: '#/parameters/sub_bank_q'
+      - $ref: '#/parameters/begin_time_q'
+      - $ref: '#/parameters/end_time_q'
+      - $ref: '#/parameters/offset_q'
+      - $ref: '#/parameters/limit_q'
+    responses:
+      200:
+        $ref: '#/responses/infos'

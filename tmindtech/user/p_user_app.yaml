@@ -1,0 +1,54 @@
+/user/app:
+  post:
+    tags:
+      - app
+    summary: 创建应用信息
+
+    parameters:
+      - $ref: '#/parameters/user_id_f'
+      - $ref: '#/parameters/app_name_f'
+    responses:
+      200:
+        $ref: '#/responses/opt_success'
+  get:
+    tags:
+      - app
+    summary: 获取应用列表
+    description: |
+      ```
+      权限设定本人 或 系统管理员，权限id:51002
+      ```
+    parameters:
+      - $ref: '#/parameters/user_id_q'
+      - $ref: '#/parameters/offset_q'
+      - $ref: '#/parameters/limit_q'
+    responses:
+      200:
+        $ref: '#/responses/apps'
+  put:
+    tags:
+      - app
+    summary: 激活 | 停用 app
+    description: |
+      ```
+      权限设定本人 或 系统管理员，权限id:51002
+      ```
+    parameters:
+      - $ref: '#/parameters/user_id_f'
+      - $ref: '#/parameters/app_id_f'
+      - $ref: '#/parameters/status_f'
+    responses:
+      200:
+        $ref: '#/responses/opt_success'
+/user/app/{id}:
+  delete:
+    tags:
+      - app
+    summary: 删除app
+    parameters:
+      - $ref: '#/parameters/id'
+    description: |
+
+    responses:
+      200:
+        $ref: '#/responses/opt_success'

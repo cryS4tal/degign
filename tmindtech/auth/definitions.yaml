@@ -1,0 +1,122 @@
+permission:
+  type: object
+  description: 权限
+  properties:
+    id:
+      $ref: '#/definitions/id'
+    name:
+      description: 权限名称
+      type: string
+    description:
+      description: 权限描述
+      type: string
+    type:
+      description: 权限类型 0-部门 1-系统
+      type: integer
+permissions:
+  type: object
+  allOf:
+    - $ref: '#/definitions/array_base'
+    - type: object
+      properties:
+        permissions:
+          type: array
+          items:
+            $ref: '#/definitions/permission'
+role:
+  description: 角色
+  type: object
+  properties:
+    id:
+      $ref: '#/definitions/id'
+    type:
+      description: 角色类型 0-系统预设角色 1-系统角色 2-部门预设角色 3-部门角色
+      type: integer
+    name:
+      description: 角色名
+      type: string
+    description:
+      description: 角色描述
+      type: string
+    dept_id:
+      description: 部门Id
+      allOf:
+        - $ref: '#/definitions/id'
+    permissions:
+      description: 权限列表
+      type: array
+      items:
+        $ref: '#/definitions/permission'
+roles:
+  description: 角色列表
+  type: object
+  allOf:
+  - $ref: '#/definitions/array_base'
+  - type: object
+    properties:
+      roles:
+        type: array
+        items:
+          $ref: '#/definitions/role'
+account:
+  type: object
+  properties:
+    id:
+      $ref: '#/definitions/id'
+    username:
+      description: 用户名
+      type: string
+    nickname:
+      description: 昵称
+      type: string
+    avatar:
+      description: 头像
+      type: string
+    state:
+      description: 用户状态
+      type: string
+    roles:
+      description: 角色列表
+      type: array
+      items:
+        $ref: '#/definitions/role'
+dept:
+  type: object
+  description: 部门
+  properties:
+    id:
+      $ref: '#/definitions/id'
+    type:
+      description: 部门类型 0-普通部门  1-系统部门
+      type: integer
+    name:
+      description: 部门名称
+      type: string
+    description:
+      description: 部门描述
+      type: string
+depts:
+  type: object
+  allOf:
+    - $ref: '#/definitions/array_base'
+    - type: object
+      properties:
+        depts:
+          type: array
+          items:
+            $ref: '#/definitions/dept'
+account_full:
+  type: object
+  allOf:
+  - $ref: '#/definitions/account'
+  - type: object
+    properties:
+      phone:
+        description: 手机号
+        type: string
+      depts:
+        type: array
+        description: 部门列表
+        items:
+          $ref: '#/definitions/dept'
+

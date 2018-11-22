@@ -1,0 +1,12 @@
+user_info:
+  description: 商户结算信息
+  schema:
+    $ref: '#/definitions/user_info'
+infos:
+  description: 商户结算列表
+  schema:
+    $ref: '#/definitions/infos'
+apps:
+  description: 应用列表
+  schema:
+    $ref: '#/definitions/apps'

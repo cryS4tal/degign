@@ -251,13 +251,10 @@ class Main:
 
     namespace_list = (
         'account',
-        'comment',
-        'directory',
-        'lawyer',
-        'notice',
-        'survey',
+        'auth',
         'storage',
-    )
+        'user',
+     )
 
     base_path_list = (
         'l',  # 本地环境 local

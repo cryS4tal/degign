@@ -1,0 +1,16 @@
+verify_code_f:
+  name: code
+  description: 验证码
+  in: formData
+  type: string
+phone_f:
+  name: phone
+  description: 手机号
+  in: formData
+  type: string
+  required: true
+password_f:
+  name: password
+  description: 密码
+  in: formData
+  type: string

@@ -1,0 +1,39 @@
+/login/super:
+  post:
+    tags:
+      - auth
+    summary: 超级管理员登录 限制登录IP
+    responses:
+      200:
+        $ref: '#/responses/account_full'
+/login/phone:
+  post:
+    tags:
+      - auth
+    summary: 手机号登录
+    description: |
+      ```
+      code为短信验证码，暂时不校验.
+      ```
+    parameters:
+      - $ref: '#/parameters/phone_f'
+      - $ref: '#/parameters/verify_code_f'
+      - $ref: '#/parameters/password_f'
+    responses:
+      200:
+        $ref: '#/responses/account_full'
+/own:
+  get:
+    tags:
+      - auth
+    summary: 获取登录信息
+    responses:
+      200:
+        $ref: '#/responses/account_full'
+  delete:
+    tags:
+      - auth
+    summary: 登出
+    responses:
+      200:
+        $ref: '#/responses/opt_success'
