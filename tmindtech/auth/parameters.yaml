@@ -14,3 +14,19 @@ password_f:
   description: 密码
   in: formData
   type: string
+user_id_f:
+  name: user_id
+  description: 用户id
+  in: formData
+  type: integer
+  format: int64
+old_pwd_f:
+  name: old_pwd
+  description: 旧密码
+  in: formData
+  type: string
+new_pwd_f:
+  name: new_pwd
+  description: 新密码
+  in: formData
+  type: string

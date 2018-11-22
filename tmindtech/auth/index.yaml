@@ -13,6 +13,8 @@ produces:
 tags:
   - name: auth
     description: 登录授权与登出
+  - name: pwd
+    description: 密码
 definitions:
   !includes
     - "common/definitions.yaml"

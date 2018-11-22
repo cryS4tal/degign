@@ -37,3 +37,31 @@
     responses:
       200:
         $ref: '#/responses/opt_success'
+/pwd/forget:
+  post:
+    tags:
+      - pwd
+    summary: 忘记密码
+    parameters:
+      - $ref: '#/parameters/user_id_f'
+      - $ref: '#/parameters/old_pwd_f'
+      - $ref: '#/parameters/new_pwd_f'
+    responses:
+      200:
+        $ref: '#/responses/opt_success'
+/pwd/reset:
+  post:
+    tags:
+      - pwd
+    summary: 重置密码
+    description: |
+      ```
+      需要短信校验.暂时不支持
+      ```
+    parameters:
+      - $ref: '#/parameters/user_id_f'
+      - $ref: '#/parameters/verify_code_f'
+      - $ref: '#/parameters/new_pwd_f'
+    responses:
+      200:
+        $ref: '#/responses/opt_success'
