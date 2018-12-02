@@ -1,0 +1,17 @@
+user_id_q:
+  name: user_id
+  description: 用户id
+  in: query
+  type: integer
+  format: int64
+user_id_f:
+  name: user_id
+  description: 用户id
+  in: formData
+  type: integer
+  format: int64
+money_f:
+  name: money
+  description: 金额/分
+  in: formData
+  type: integer

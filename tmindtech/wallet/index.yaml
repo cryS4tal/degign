@@ -1,0 +1,31 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: Wallet API
+host: api.tmindtech.com
+basePath:
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+tags:
+  - name: wallet
+    description: 钱包
+definitions:
+  !includes
+    - "common/definitions.yaml"
+    - "wallet/definitions.yaml"
+parameters:
+  !includes
+    - "common/parameters.yaml"
+    - "wallet/parameters.yaml"
+responses:
+  !includes
+    - "common/responses.yaml"
+    - "wallet/responses.yaml"
+paths:
+  !includes
+    - "wallet/p_wallet.yaml"
+

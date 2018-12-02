@@ -1,0 +1,18 @@
+wallet:
+  type: object
+  description: 权限
+  properties:
+    id:
+      $ref: '#/definitions/id'
+    user_id:
+      description: 用户id
+      $ref: '#/definitions/id'
+    total_money:
+      description: 总金额/分
+      type: integer
+    avaliable_money:
+      description: 可用金额/分
+      type: integer
+    abnormal_money:
+      description: 交易中金额/fen
+      type: integer

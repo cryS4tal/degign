@@ -1,0 +1,28 @@
+/wallet:
+  get:
+    tags:
+      - wallet
+    summary: 用户钱包
+    description: |
+      ```
+      权限 本人 或者 管理员，权限id: 81001
+      ```
+    parameters:
+      - $ref: '#/parameters/user_id_q'
+    responses:
+      200:
+        $ref: '#/responses/wallet'
+  post:
+    tags:
+      - wallet
+    summary: 充值
+    description: |
+      ```
+      管理员，权限id: 81001
+      ```
+    parameters:
+      - $ref: '#/parameters/user_id_f'
+      - $ref: '#/parameters/money_f'
+    responses:
+      200:
+        $ref: '#/responses/wallet'

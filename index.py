@@ -253,6 +253,7 @@ class Main:
         'account',
         'auth',
         'pay',
+        'wallet',
         'storage',
         'user',
      )

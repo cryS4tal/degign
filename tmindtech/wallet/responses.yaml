@@ -1,0 +1,7 @@
+# swagger
+# /account/responses
+wallet:
+  description: 钱包
+  schema:
+    $ref: '#/definitions/wallet'
+
