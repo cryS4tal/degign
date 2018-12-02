@@ -10,3 +10,21 @@
     responses:
       200:
         $ref: '#/responses/opt_success'
+  get:
+    tags:
+      - secret
+    summary: 获取商户私钥
+
+    parameters:
+      - $ref: '#/parameters/user_id_q'
+    responses:
+      200:
+        $ref: '#/responses/user_key'
+/user/secret/random:
+  post:
+    tags:
+      - secret
+    summary: 随机生成私钥
+    responses:
+      200:
+        $ref: '#/responses/user_key'

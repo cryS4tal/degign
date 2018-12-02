@@ -86,6 +86,11 @@ app:
       type: string
       description: 修改时间
       format: 'date-time'
-
-
+user_key:
+  type: object
+  description: 商户私钥
+  properties:
+    key:
+      description: 商户私钥
+      type: string
 

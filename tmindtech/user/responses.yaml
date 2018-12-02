@@ -10,3 +10,7 @@ apps:
   description: 应用列表
   schema:
     $ref: '#/definitions/apps'
+user_key:
+  description: 商户密钥
+  schema:
+    $ref: '#/definitions/user_key'
