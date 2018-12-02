@@ -1,0 +1,9 @@
+# swagger
+# /account/responses
+bills:
+  description: 账单列表
+  schema:
+    $ref: '#/definitions/bills'
+sum:
+  schema:
+    $ref: '#/definitions/sum'

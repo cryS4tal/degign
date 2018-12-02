@@ -1,0 +1,47 @@
+bill:
+  type: object
+  description: 权限
+  properties:
+    mch_id:
+      description: 商户id
+      $ref: '#/definitions/id'
+    money:
+      description: 金额/分
+      type: integer
+    mch_order_id:
+      description: 商户订单id
+      type: string
+    sys_order_id:
+      description: 系统订单id
+      type: string
+    pay_type:
+      description: 支付类型：alipay/wx 解析支付宝/微信
+      type: string
+    state:
+      description: 状态:新订单/进行中/成功/失败
+      type: string
+    trade_time:
+      description: 交易时间 yyyy-MM-dd HH:mm:ss
+      type: string
+
+bills:
+  type: object
+  allOf:
+    - $ref: '#/definitions/array_base'
+    - type: object
+      properties:
+        permissions:
+          type: array
+          items:
+            $ref: '#/definitions/bill'
+sum:
+  type: object
+  description: 权限
+  properties:
+    total:
+      description: 总金额/分
+      type: integer
+    count:
+      description: 成交笔数
+      type: integer
+

@@ -252,6 +252,7 @@ class Main:
     namespace_list = (
         'account',
         'auth',
+        'pay',
         'storage',
         'user',
      )

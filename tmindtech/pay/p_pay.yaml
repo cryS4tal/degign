@@ -1,0 +1,35 @@
+/bill:
+  get:
+    tags:
+      - pay
+    summary: 用户账单
+    description: |
+      ```
+      啊啊啊啊啊啊
+      ```
+    parameters:
+      - $ref: '#/parameters/user_id_q'
+      - $ref: '#/parameters/status_q'
+      - $ref: '#/parameters/mch_order_id_q'
+      - $ref: '#/parameters/sys_order_id_q'
+      - $ref: '#/parameters/pay_type_q'
+      - $ref: '#/parameters/trade_type_q'
+      - $ref: '#/parameters/trade_time_q'
+      - $ref: '#/parameters/start_time_q'
+      - $ref: '#/parameters/end_time_q'
+      - $ref: '#/parameters/offset_q'
+      - $ref: '#/parameters/limit_q'
+    responses:
+      200:
+        $ref: '#/responses/bills'
+
+/bill/today:
+  get:
+    tags:
+      - pay
+    summary: 今日成交统计
+    parameters:
+      - $ref: '#/parameters/user_id_q'
+    responses:
+      200:
+        $ref: '#/responses/sum'

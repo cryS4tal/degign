@@ -1,0 +1,49 @@
+sys_order_id_q:
+  name: sys_order_id
+  description: 系统订单号
+  in: query
+  type: string
+mch_order_id_q:
+  name: mch_order_id
+  description: 商户订单号
+  in: query
+  type: string
+status_q:
+  name: status
+  description: 状态：1 - 新订单；2 - 进行中；3 - 交易成功；4 - 交易失败
+  in: query
+  type: integer
+user_id_q:
+  name: user_id
+  description: 用户id
+  in: query
+  type: integer
+  format: int64
+pay_type_q:
+  name: pay_type
+  description: 支付类型：alipay(支付宝)，wx(微信)
+  in: query
+  type: string
+trade_type_q:
+  name: trade_type
+  description: 暂时不用
+  in: query
+  type: string
+trade_time_q:
+  name: trade_time
+  description: 交易时间，格式yyy-MM-dd
+  in: query
+  type: string
+  format: 'date-time'
+start_time_q:
+  name: start_time
+  description: 开始时间
+  in: query
+  type: string
+  format: 'date-time'
+end_time_q:
+  name: end_time
+  description: 结束时间
+  in: query
+  type: string
+  format: 'date-time'
